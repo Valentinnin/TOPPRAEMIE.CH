@@ -8,11 +8,25 @@
     <script defer src="script.js"></script>
 </head>
 <body>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('taskbar.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.body.insertAdjacentHTML('afterbegin', data);
+                });
+        });
+    </script>
+    
+
+
+
     <header>
         <div class="banner">
             <img src="Bilder/Berg_Banner.jpg" alt="Berg Banner">
             <div class="header-content">
-                <h1>topprämie.ch</h1>
+                <h1>Toppräm<span class="image-replace">i</span>e.ch</h1>
+
                 <p>jetzt kostenlos vergleichen und bares Geld sparen</p>
                 <nav>
                     <ul>
@@ -42,7 +56,7 @@
                 <option value="Autoversicherung">Autoversicherung</option>
                 <option value="Reiseversicherung">Reiseversicherung</option>
                 <option value="Tierversicherung">Tierversicherung</option>
-                <option value="Vorsorge3a/3b">Vorsorge 3a/3b</option>
+                <option value="Vorsorge3a/3b">Vorsorge 3a_3b</option>
                 <option value="Steuererklärung">Steuererklärung</option>
             </select>
             <button type="submit">Jetzt kostenlos vergleichen und sparen</button>
