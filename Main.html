@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bergbanner Webseite</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <header>
+        <div class="banner">
+            <img src="Bilder/Berg_Banner.jpg" alt="Berg Banner">
+            <div class="header-content">
+                <h1>topprämie.ch</h1>
+                <p>jetzt kostenlos vergleichen und bares Geld sparen</p>
+                <nav>
+                    <ul>
+                        <li>Krankenklasse</li>
+                        <li>Haushaltversicherung</li>
+                        <li>Wertsachversicherung</li>
+                        <li>Rechtsschutz</li>
+                        <li>Autoversicherung</li>
+                        <li>Reiseversicherung</li>
+                        <li>Tierversicherung</li>
+                        <li>Vorsorge 3a/3b</li>
+                        <li>Steuererklärung</li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <main>
+        <form id="interesseForm">
+            <input type="text" id="name" placeholder="mein Name" required>
+            <select id="interesse" required>
+                <option value="" disabled selected>dieses Thema interessiert mich</option>
+                <option value="Krankenkasse">Krankenkasse</option>
+                <option value="Haushaltversicherung">Haushaltsversicherung</option>
+                <option value="Wertsachversicherung">Wertsachenversicherung</option>
+                <option value="Rechtsschutz">Rechtsschutz</option>
+                <option value="Autoversicherung">Autoversicherung</option>
+                <option value="Reiseversicherung">Reiseversicherung</option>
+                <option value="Tierversicherung">Tierversicherung</option>
+                <option value="Vorsorge3a/3b">Vorsorge 3a/3b</option>
+                <option value="Steuererklärung">Steuererklärung</option>
+            </select>
+            <button type="submit">Jetzt kostenlos vergleichen und sparen</button>
+        </form>
+    </main>
+    <footer>
+        <p>Impressum | Nutzungsbedingungen | Datenschutzerklärung</p>
+    </footer>
+</body>
+</html>
