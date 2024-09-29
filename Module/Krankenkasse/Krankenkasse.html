@@ -1,17 +1,140 @@
 <!DOCTYPE html>
 <html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Krankenkasse</title>
-    <script defer src="Krankenkasse.js"></script>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bergbanner Webseite</title>
+        <link rel="stylesheet" href="Krankenkasse.css">
+        <script defer src="Krankenkasse.js"></script>
+        <style>
+            .header-content a {
+                text-decoration: none;
+                color: inherit;
+            }
+        </style>
+    </head>
 <body>
-    <header>
-        <h1>Krankenkasse</h1>
-    </header>
-    <main>
-        <p id="greeting"></p>
-    </main>
+    <div class="container">
+        <header>
+            <a href="/Main.html">
+                <img src="/Bilder/Berg_Banner.jpg" alt="Mountain background">
+            </a>
+            <div class="header-content">
+                <a href="/Main.html">
+                    <h1>toppraemie.ch</h1>
+                </a>
+                <p>jetzt kostenlos vergleichen und bares Geld sparen</p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="/Module/Krankenkasse/Krankenkasse.html">Krankenkasse</a></li>
+                    <li><a href="/Module/Haushaltsversicherung/Haushaltsversicherung.html">Haushaltsversicherung</a></li>
+                    <li><a href="/Module/Wertsachenversicherung/Wertsachenversicherung.html">Wertsachenversicherung</a></li>
+                    <li><a href="/Module/Rechtsschutz/Rechtsschutz.html">Rechtsschutz</a></li>
+                    <li><a href="/Module/Autoversicherung/Autoversicherung.html">Autoversicherung</a></li>
+                    <li><a href="/Module/Reiseversicherung/Reiseversicherung.html">Reiseversicherung</a></li>
+                    <li><a href="/Module/Tierversicherung/Tierversicherung.html">Tierversicherung</a></li>
+                    <li><a href="/Module/Vorsorge3a_3b/Vorsorge3a_3b.html">Vorsorge 3a/3b</a></li>
+                    <li><a href="/Module/Steuererklärung/Steuererklärung.html">Steuererklärung</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <div id="krankenkasse-form-container">
+                <div class="form-containerKrankenkasse">
+                    <div id="initial-options">
+                        <h1 id="welcome-message">Willkommen zu deinem kostenlosen Krankenkassenvergleich</h1>
+                        <p>was können wir für dich tun?</p>
+                        <div>
+                            <button onclick="showForm('beratung')">Ich wünsche eine Beratung</button>
+                            &nbsp;&nbsp;&nbsp;&nbsp; <!-- Fügt 4 Leerzeichen hinzu -->
+                            <button onclick="showForm('offerte')">Ich wünsche eine Offerte</button>
+                        </div>
+                    </div>
+                
+                    <form id="beratung-form" style="display: none;">
+                        <h2>Noch 1 Schritt zu deinem kostenlosen Beratungstermin</h2>
+                        <div class="form-group">
+                            <label for="vorname-beratung">Vorname / Name</label>
+                            <input id="vorname-beratung" type="text" placeholder="Vorname / Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="geburtsdatum-beratung">Geburtsdatum</label>
+                            <input id="geburtsdatum-beratung" type="date" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="plz-beratung">PLZ</label>
+                            <input id="plz-beratung" type="text" placeholder="PLZ" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email-beratung">Email</label>
+                            <input id="email-beratung" type="email" placeholder="Email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="telefon-beratung">Telefonnummer</label>
+                            <input id="telefon-beratung" type="tel" placeholder="Telefonnummer" required>
+                        </div>
+                        <div class="form-group">
+                            <p>Wie möchten Sie beraten werden?</p>
+                            <label>
+                                <input type="radio" name="beratungsart" value="telefon" checked> per Telefon
+                            </label>
+                            <label>
+                                <input type="radio" name="beratungsart" value="online"> Online
+                            </label>
+                            <label>
+                                <input type="radio" name="beratungsart" value="vor-ort"> vor Ort
+                            </label>
+                        </div>
+                        <button type="submit">Terminanfrage senden</button>
+                    </form>
+
+                    <form id="offerte-form" style="display: none;">
+                        <h2>Noch 3 Schritte zu deinen kostenlosen Krankenkassenofferten</h2>
+                        <div class="form-group">
+                            <label for="vorname-offerte">Vorname / Name</label>
+                            <input id="vorname-offerte" type="text" placeholder="Vorname / Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="geburtsdatum-offerte">Geburtsdatum</label>
+                            <input id="geburtsdatum-offerte" type="date" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="plz-offerte">PLZ</label>
+                            <input id="plz-offerte" type="text" placeholder="PLZ" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email-offerte">Email</label>
+                            <input id="email-offerte" type="email" placeholder="Email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="telefon-offerte">Telefonnummer</label>
+                            <input id="telefon-offerte" type="tel" placeholder="Telefonnummer" required>
+                        </div>
+                        <div class="form-group">
+                            <p>Möchten Sie mehr als eine Person versichern?</p>
+                            <label>
+                                <input type="radio" name="mehrPersonen" value="ja"> Ja
+                            </label>
+                            <label>
+                                <input type="radio" name="mehrPersonen" value="nein" checked> Nein
+                            </label>
+                        </div>
+                        <button type="button" onclick="addPerson()">Person hinzufügen</button>
+                        <button type="submit">weiter</button>
+                    </form>
+                </div>    
+            </div>
+        </main>
+
+        <footer>
+            <a href="/Impressum.html" target="_self">Impressum</a>
+            <a href="/Nutzungsbedingungen.html" target="_self">Nutzungsbedingungen</a>
+            <a href="/Datenschutz.html" target="_self">Datenschutzerklärung</a>
+        </footer>
+    </div>
+
+    <script src="Krankenkasse.js"></script>
 </body>
 </html>
