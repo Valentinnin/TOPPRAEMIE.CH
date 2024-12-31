@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bergbanner Webseite</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='Rechtsschutz.css') }}"> <!--Aktivieren/Deaktivieren für Python Server -->
+        <!-- <link rel="stylesheet" href="../static/Rechtsschutz.css"> Aktivieren/Deaktivieren für Python Server -->
+    <style>
+        .header-content a {
+            text-decoration: none;
+            color: inherit;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <!--<img id="bannerbackground" src="../static/Bilder/Berg_Banner.jpg" alt="Mountain background"> Aktivieren/Deaktivieren für Python Server -->
+             <img src="{{ url_for('static', filename='Bilder/Berg_Banner.jpg') }}" id="bannerbackground" alt="Mountain background"> <!--Aktivieren/Deaktivieren für Python Server -->
+            <div class="header-content">
+                <a href="{{ url_for('index') }}">
+                    <!--<img id="logo" src="../../../Bilder/Toppraemie logo/logo2.png" alt="toppraemie Logo"> -->
+                    <img id="logo" src="{{ url_for('static', filename='Bilder/logo2.png') }}" alt="toppraemie Logo">
+                    <p class="bold">jetzt kostenlos vergleichen und bares Geld sparen</p>
+                </a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('krankenkasse') }}">Krankenkasse</a></li>
+                    <li><a href="{{ url_for('hausvers') }}">Haushaltsversicherung</a></li>
+                    <li><a href="{{ url_for('wertvers') }}">Wertsachenversicherung</a></li>
+                    <li><a href="{{ url_for('rechtschutz') }}">Rechtsschutz</a></li>
+                    <li><a href="{{ url_for('autoversicherung') }}">Autoversicherung</a></li>
+                    <li><a href="{{ url_for('reisevers') }}">Reiseversicherung</a></li>
+                    <li><a href="{{ url_for('tiervers') }}">Tierversicherung</a></li>
+                    <li><a href="{{ url_for('vorsorgevers') }}">Vorsorge 3a/3b</a></li>
+                    <li><a href="{{ url_for('steuererklärung') }}">Steuererklärung</a></li>
+                </ul>
+            </nav>
+        </header>
+    
+        <main>
+            <img src="{{ url_for('static', filename='Bilder/Textur.jpg') }}" alt="Marmor Textur" id="marmortext"> <!--Aktivieren/Deaktivieren für Python Server -->
+            <!--<img src="../static/Bilder/Textur.jpg" alt="" id="marmortext">Aktivieren/Deaktivieren für Python Server -->
+            <div id="formCont1">
+                <div class="formCont2">
+                    <div id="initial-options" >
+                        <h2>Vielen Herzlichen Dank für Deine Anfrage, wir werden diese so schnell wie möglich bearbeiten!</h2>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <a href="/Impressum.html" target="_self">Impressum</a>
+            <a href="/Nutzungsbedingungen.html" target="_self">Nutzungsbedingungen</a>
+            <a href="/Datenschutz.html" target="_self">Datenschutzerklärung</a>
+        </footer>
+    </div>
+    <script src="{{ url_for('static', filename='Rechtsschutz.js') }}"></script>
+    <!--<script src="../static/Krankenkasse.js"></script>-->
+<body>

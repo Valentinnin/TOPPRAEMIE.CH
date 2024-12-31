@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bergbanner Webseite</title>
+    <link rel="stylesheet" href="Rechtsschutz.css">
+    <style>
+        .header-content a {
+            text-decoration: none;
+            color: inherit;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img id="bannerbackground" src="/Bilder/Berg_Banner.jpg" alt="Mountain background">
+            <div class="header-content">
+                <a href="/Main.html">
+                    <img id="logo" src="../../../Bilder/Toppraemie logo/logo2.png" alt="toppraemie Logo">
+                    <p class="bold">jetzt kostenlos vergleichen und bares Geld sparen</p>
+                </a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="/Module/Krankenkasse/templates/Krankenkasse.html">Krankenkasse</a></li>
+                    <li><a href="/Module/Haushaltsversicherung/Haushaltsversicherung.html">Haushaltsversicherung</a></li>
+                    <li><a href="/Module/Wertsachenversicherung/Wertsachenversicherung.html">Wertsachenversicherung</a></li>
+                    <li><a href="/Module/Rechtsschutz/Rechtsschutz.html">Rechtsschutz</a></li>
+                    <li><a href="/Module/Autoversicherung/Autoversicherung.html">Autoversicherung</a></li>
+                    <li><a href="/Module/Reiseversicherung/Reiseversicherung.html">Reiseversicherung</a></li>
+                    <li><a href="/Module/Tierversicherung/Tierversicherung.html">Tierversicherung</a></li>
+                    <li><a href="/Module/Vorsorge3a_3b/Vorsorge3a_3b.html">Vorsorge 3a/3b</a></li>
+                    <li><a href="/Module/Steuererklärung/Steuererklärung.html">Steuererklärung</a></li>
+                </ul>
+            </nav>
+        </header>
+    
+
+        <main>
+            <img src="Bilder/Textur.jpg" alt="Marmor Textur" id="marmortext">
+            <div id="formCont1">
+                <div class="formCont2">
+                    <div id="initial-options" >
+                        <h1 class="textAlignCenter" id="welcome-message">Willkommen zu deinem kostenlosen Rechtsschutzvergleich</h1>
+                        <p class="textAlignCenter">Wen möchtest du versichern?</p>
+                        <div class="buttonCont">
+                            <button class="leftButton" onclick="showForm('einzelperson')">Einzelperson</button>
+                            <button class="rightButton" onclick="showForm('mehrperson')">Mehrere Personen</button>
+                        </div>
+                    </div>
+                    <form id="einzelperson"  action="" style="display: none;">
+                        <h2>Nur noch 1 Schritt zu deiner kostenlosen Rechtsschutzofferte</h2>
+                        <fieldset class="formcont">
+                            <label class="inputlabel" for="name">Vorname / Name</label>
+                            <input class="inputFeld" type="text" placeholder="Vorname / Name" name="Vor und Nachname" id="name">
+
+                            <label class="inputlabel" for="Geburtsdatum">Geburtsdatum</label>
+                            <input class="inputFeld" type="date" name="Geburtsdatum" id="Geburtsdatum">
+
+                            <label class="inputlabel" for="strasseHausnummer">Strasse / Hausnummer</label>
+                            <input class="inputFeld" type="text" placeholder="Strasse / Hausnummer" name="Strasse / Hausnummer" id="strasseHausnummer">
+
+                            <label class="inputlabel" for="ortPlz">Ort / PLZ</label>
+                            <input class="inputFeld" type="text" placeholder="Ort / PLZ" name="Ort / PLZ" id="ortPlz">
+
+                            <label class="inputlabel" for="email">E-Mail</label>
+                            <input class="inputFeld" type="email" placeholder="Email" name="Email" id="email">
+
+                            <label class="inputlabel" for="tel">Telefonnummer</label>
+                            <input class="inputFeld" type="tel" placeholder="Telefonnummer" name="Telefonnummer" id="tel">
+                        </fieldset>
+                        <fieldset class="formcont">
+                            <legend class="inputlabel">Hast du bereits eine Rechtsschutzversicherung? Wenn ja, bei welcher Gesellschaft?</legend>
+                            <div class="radiobutton">
+                                <input type="radio" name="Aktuelle Gesellschaft" id="gesellschaftJa" value="Ja">
+                                <label for="gesellschaftJa">Ja</label>
+                                <input type="radio" name="Aktuelle Gesellschaft" id="gesellschaftNein" value="Nein">
+                                <label for="gesellschaftNein">Nein</label>
+                            </div>
+                            <label class="inputlabel" for="gesellschaft">Gesellschaft</label>
+                            <select class="inputFeld" name="Gesellschaft" id="gesellschaft">
+                                <option value="" disabled selected>Bitte wähle eine Gesellschaft aus</option>
+                                <option value="AXA">AXA Arag</option>
+                                <option value="Mobiliar">Mobiliar Protekta</option>
+                                <option value="Helvetia">Helvetia</option>
+                                <option value="Coop">Coop</option>
+                                <option value="TCS">TCS</option>
+                                <option value="Dextra">Dextra</option>
+                                <option value="Smile">Smile</option>
+                                <option value="Generali">Fortuna Generali</option>
+                                <option value="Elvia">Elvia</option>
+                                <option value="Baloise">Baloise</option>
+                                <option value="Orion">Orion</option>
+                                <option value="CSS">CSS</option>
+                                <option value="Groupe Mutuel">Groupe Mutuel</option>
+                                <option value="Helsana">Helsana</option>
+                                <option value="Vaudoise">Vaudoise</option>
+                                <option value="anderer">anderer Anbieter</option>
+                            </select>
+                        </fieldset>
+                        <fieldset class="formcont">
+                            <legend class="inputlabel">Hast du aktuell Rechtsstreitigkeiten oder Streitigkeiten die zu einem Rechsfall führen könnten?</legend>
+                            <div class="radiobutton">
+                                <input type="radio" name="Aktuelle Rechtstreitigkeit" id="aktRechtNein" value="Nein">
+                                <label for="aktRechtNein">Nein</label>
+                                <input type="radio" name="Aktuelle Rechtstreitigkeit" id="aktRechtJa" value="Ja">
+                                <label for="aktRechtJa">Ja</label>
+                                <input type="radio" name="Aktuelle Rechtstreitigkeit" id="aktRechtNichtSicher" value="nicht Sicher">
+                                <label for="aktRechtNichtSicher">ich bin mir nicht sicher</label>
+                            </div>
+                        </fieldset>
+                        <button type="submit">Kostenlose Offerte bestellen*</button>
+                        <p class="bestNutzerBedingung">*durch das Klicken auf den Button akzeptierst du unsere <a href="">Nutzungsbedingungen</a> und unsere <a href="">Datenschutzerklärung</a></p>
+                    </form>
+                    <form id="mehrperson" action="" style="display: none;">
+                        <h2>diese Seite befindet sich im Aufbau</h2>
+                    </form>
+                    
+                </div>
+            </div>
+            
+        </main>
+        <footer>
+            <a href="/Impressum.html" target="_self">Impressum</a>
+            <a href="/Nutzungsbedingungen.html" target="_self">Nutzungsbedingungen</a>
+            <a href="/Datenschutz.html" target="_self">Datenschutzerklärung</a>
+        </footer>
+    </div>
+    <script src="Rechtsschutz.js"></script>
+<body>

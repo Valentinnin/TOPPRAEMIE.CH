@@ -1,0 +1,224 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: auto;
+  font-family: Arial, sans-serif;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('Bilder/Mat2.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  z-index: -1;
+}
+
+.content {
+  padding: 20px;
+  height: 200vh;
+  background-color: rgba(97, 41, 41, 0.224);
+}
+
+header {
+  color: white;
+  min-height: 30px;
+  position: relative;
+  height: 25vh; /* Endwert der Animation */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#logo {
+  width: 800px; /* Endwert der Animation */
+  position: absolute;
+  top: 10px; /* Endwert der Animation */
+  left: 10px; /* Endwert der Animation */
+  transform: translate(0, 0);
+  border-radius: 10px;
+  background-color: transparent; /* Endwert der Animation */
+}
+
+#anim-text {
+  position: absolute;
+  text-shadow: 2px 2px 5px black, -2px -2px 5px gray;
+  top: calc(10px + 130px);
+  left: 10px;
+  opacity: 1; /* Endwert der Animation */
+  font-size: 18px;
+  color: white;
+}
+
+nav {
+  position: absolute;
+  opacity: 1; /* Endwert der Animation */
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px 0;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+nav ul li {
+  margin: 0 10px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+main {
+  flex-grow: 1;
+  background: linear-gradient(140deg, rgba(204, 223, 145, 0.406) 0%, rgba(118, 209, 232, 0.521) 50%, rgba(58, 217, 106, 0.543) 100%);
+  opacity: 1; /* Endwert der Animation */
+  width: auto;
+  height: auto;
+}
+
+footer {
+  background-color: #f3f4f6bc;
+  padding: 10px;
+  text-align: center;
+  opacity: 1; /* Endwert der Animation */
+}
+
+footer a {
+  color: #4b5563;
+  text-decoration: none;
+  margin: 0 10px;
+  font-size: 0.9rem;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+#start-animation {
+  margin-top: 500px;
+  padding: 10px 20px;
+  background-color: #307533;
+  color: white;
+  font-size: 50px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#start-animation:hover {
+  background-color: #36a93b;
+}
+
+.maincont {
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
+  margin-top: 50px;
+  background-color: rgba(255, 255, 255, 0.616);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 800px;
+}
+
+.grid-layout {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(5, auto);
+  gap: 10px;
+  list-style-type: none;
+  padding: 0;
+}
+
+.grid-layout li {
+  display: block; 
+  padding: 20px;
+  text-align: center;
+}
+
+.seccont {
+  margin: 10px;
+}
+
+#optionen li {
+  color: white;
+  font-size: 20px;
+  background-color: #307533;
+  border-radius: 10px;
+}
+
+#optionen li:hover {
+  color: white;
+  background-color: #36a93b;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+a:link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.marginbot20px {
+  margin-bottom: 20px;
+}
+a:visited {
+  color: white; 
+}
+.maincont{
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+.bigger{
+  font-size: 50px
+}
+.biggerr{
+  font-size: 40px
+}
+
+.seccont{
+  padding: 10px;
+}
+.hervorheben{
+  text-decoration: underline;
+  color: #104b12;
+  transition: color 0.2s ease;
+}
+.hervorheben:hover{
+  color: #2bb331;
+}
+.textdecounderline{
+  text-decoration: underline;
+}

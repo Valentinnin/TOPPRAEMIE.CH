@@ -1,0 +1,30 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+#offerte-form{
+    background-color: aqua;
+    width: 80vw;
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#offerte-form1{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+#offerte-form2{
+    width: 100%;
+}
+#offerte-form3{
+    width: 100%;
+}
+
+fieldset{
+    display: flex;
+}

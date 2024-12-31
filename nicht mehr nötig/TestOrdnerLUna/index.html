@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <form id="offerte-form" action="">
+        <div id="offerte-form1">
+            <h2>Noch 3 Schritte zu deinen <u>kostenlosen</u> Krankenkassenofferten</h2>
+            <label for="vorname-beratung">Vorname / Name</label>
+            <input type="text" placeholder="Vorname / Name" name="vorname-beratung" id="vorname-beratung" required>
+    
+            <label for="geburtsdatumberatung">Geburtsdatum</label>
+            <input type="date" placeholder="" name="geburtsdatumberatung" id="geburtsdatumberatung" required>
+    
+            <label for="plz-beratung">Ort / PLZ</label>
+            <input type="text" placeholder="Ort oder Postleitzahl" name="plz-beratung" id="plz-beratung" required>
+    
+            <label for="email-beratung">Email</label>
+            <input type="email" placeholder="Email" name="email-beratung" id="email-beratung" required>
+    
+            <label for="tel-beratung">Telefonnummer</label>
+            <input type="tel" placeholder="Telefonnummer" name="tel-beratung" id="tel-beratung" required>
+    
+            <label for="selec-kk-beratung">Bei Welcher Krankenkasse bist du aktuell Versichert?</label>
+            <select id="selec-kk-beratung" name="kk-beratung" required>
+                <option value="" disabled selected>Bitte wähle eine Krankenkasse aus</option>
+                <option value="" disabled selected>Bitte wähle eine Krankenkasse aus</option>
+                <option value="Agrisano">Agrisano</option>
+                <option value="AMB">AMB</option>
+                <option value="Aquilana">Aquilana</option>
+                <option value="Assura">Assura</option>
+                <option value="Atupri">Atupri</option>
+                <option value="Avenir">Avenir</option>
+                <option value="Birchmeier">Birchmeier</option>
+                <option value="Concordia">Concordia</option>
+                <option value="CSS">CSS</option>
+                <option value="d'Entremont">d'Entremont</option>
+                <option value="Easysana">Easysana</option>
+                <option value="EGK">EGK</option>
+                <option value="Einsideln">Einsideln</option>
+                <option value="Galenos">Galenos</option>
+                <option value="Glarner">Glarner</option>
+                <option value="Helsana">Helsana</option>
+                <option value="KluG">KluG</option>
+                <option value="KPT">KPT</option>
+                <option value="KKLH">KKLH</option>
+                <option value="Masauns">Masauns</option>
+                <option value="Mutuel">Mutuel</option>
+                <option value="ÖKK">ÖKK</option>
+                <option value="Philos">Philos</option>
+                <option value="Rhenusana">Rhenusana</option>
+                <option value="Sana24">Sana24</option>
+                <option value="Salavals">Salavals</option>
+                <option value="Sanitas">Sanitas</option>
+                <option value="SLKK">SLKK</option>
+                <option value="Sodalis">Sodalis</option>
+                <option value="Steffisburg">Steffisburg</option>
+                <option value="Sumiswalder">Sumiswalder</option>
+                <option value="SUPRA">SUPRA</option>
+                <option value="SWICA">SWICA</option>
+                <option value="Sympany">Sympany</option>
+                <option value="Visana">Visana</option>
+                <option value="Visperterminen">Visperterminen</option>
+                <option value="Vita Surselva">Vita Surselva</option>
+                <option value="Vivacare">Vivacare</option>
+                <option value="Wäderswil">Wäderswil</option>
+            </select>
+            <p>Wie möchtest du Beraten werden?</p>
+            <div class="formcont3">
+                <label for="online-beratung">Online <input type="radio" name="wo-beraten" value="Online" id="online-beratung" checked></label>
+                <label for="per-tel-beratung">per Telefon <input type="radio" name="wo-beraten" value="per Telefon" id="per-tel-beratung"></label>
+                <label for="vor-ort-beratung">vor Ort <input type="radio" name="wo-beraten" value="vor Ort" id="vor-ort-beratung"></label>
+            </div>
+            <label for="thema-beratung">Welches Thema beschreibt deine Anfrage am besten?</label>
+            <select id="thema-beratung" name="thema-beratung" required>
+                <option value="Günstige Prämie">Günstige Prämie</option>
+                <option value="bestes Preis-/Leistungsverhältnis">bestes Preis-/Leistungsverhältnis</option>
+                <option value="Bestes Leistungspaket">Bestes Leistungspaket</option>
+                <option value="Grundversicherung">Grundversicherung</option>
+                <option value="Zusatzversicherung">Zusatzversicherung</option>
+                <option value="Zusatzversicherung abgelehnt">Zusatzversicherung abgelehnt, was nun?</option>
+                <option value="Zahnspange und keine Versicherung">Zahnspange und keine Versicherung, was nun?</option>
+                <option value="Zahnversicherung">Zahnversicherung</option>
+                <option value="Dentalhygiene">Dentalhygiene</option>
+                <option value="Alternativmedizin">Alternativmedizin</option>
+                <option value="Massagen">Massagen</option>
+                <option value="Sport">Sport</option>
+                <option value="Fitness">Fitness</option>
+                <option value="Auslandversicheurng">Auslandversicheurng</option>
+                <option value="Familienrabatte">Familienrabatte</option>
+                <option value="Mutterschaft">Mutterschaft</option>
+                <option value="Schwangerschaft">Schwangerschaft</option>
+                <option value="Baby">Baby</option>
+                <option value="vorgeburtliche Anmeldung">vorgeburtliche Anmeldung</option>
+                <option value="Neu in der Schweiz">Neu in der Schweiz</option>
+                <option value="Umzug in die Schweiz">Umzug in die Schweiz</option>
+            </select>
+            <p>Arbeitest du mehr als 8 Stunden beim gleichen Arbeitgeber?</p>
+            <label for="8harbeittrue">Ja <input type="radio" id="8harbeittrue" name="8harbeit" value="8harbeitja"></label>
+            <label for="8harbeitfalse">Nein <input type="radio" id="8harbeitfalse" name="8harbeit" value="8harbeitnein"></label>
+            </div>
+        <div id="offerte-form2">
+            <h2>Hallo XXX, noch 2 Schritte zu deinen kostenlosen Krankenkassenofferten</h2>
+            <fieldset>
+                <p>Gewünschte Franchise</p>
+                <label for="">300,-<input type="radio"></label>
+                <label for="">500,-<input type="radio"></label>
+                <label for="">1000,-<input type="radio"></label>
+                <label for="">1500,-<input type="radio"></label>
+                <label for="">2000,-<input type="radio"></label>
+                <label for="">2500,-<input type="radio"></label>
+                <p>Kinder</p>
+                <label for="">0,-<input type="radio"></label>
+            </fieldset>
+            <fieldset>
+                <p>Gewünschtes Modell</p>
+                <label for="">Telmed<input type="radio"></label>
+                <label for="">Hausarzt<input type="radio"></label>
+                <label for="">Gruppenpraxis<input type="radio"></label>
+                <label for="">Kombimodell<input type="radio"></label>
+                <label for="">freie Arztwahl<input type="radio"></label>
+                <label for="">nicht Relevant<input type="radio"></label>
+            </fieldset>
+            <fieldset>
+                <p>*Nur Neuzuzügler: Wann hast du dich in der Gemeinde Angemeldet?</p>
+                <input type="date">
+            </fieldset>
+            <fieldset>
+                <legend>Diese Leistungen sind mir wichtig</legend>
+                <div>
+                    <label for=""><input type="checkbox">Basis Leistungen (Transporte und Rettungen, Medikamente, Notfälle im Ausland, Spitalabdeckung ganze Schweiz)</label>
+                    <label for=""><input type="checkbox">Alternativmedizin</label>
+                    <label for=""><input type="checkbox">Fitness / Sport</label>
+                    <label for=""><input type="checkbox">Billen / Linsen</label>
+                </div>
+                <div>
+                    <label for=""><input type="checkbox">Vorsorge / Check-up</label>
+                    <label for=""><input type="checkbox">Dentalhygiene</label>
+                    <label for=""><input type="checkbox">Zahnbehandlungen</label>
+                    <label for=""><input type="checkbox">Zahnspangen</label>
+                </div>
+                <div>
+                    <label for=""><input type="checkbox">Spitalkomfort (Einzel- oder Zweibettzimmer, erweiterte Besuchszeit etc.)</label>
+                    <label for=""><input type="checkbox">Spitalbehandlungen (Freie Arztwahl bzw. Ober-Chefarzt, beste Medizin, Fasttrack etc.)</label>
+                    <label for=""><input type="checkbox">erweiterte Leistungen (Wahlbehandlungen im Ausland, Risikosport bzw. Wagnisse)</label>
+                    <label for=""><input type="checkbox">Kapitalleistung bei Tod / Invalidität</label>
+                </div>
+            </fieldset>
+        </div>
+        <div id="offerte-form3">
+            <fieldset>
+                <legend>Gewünschte Krankenasse(n)</legend>
+                <label for=""><input type="checkbox" name="" id="">Helsana</label>
+                <label for=""><input type="checkbox" name="" id="">CSS</label>
+                <label for=""><input type="checkbox" name="" id="">Concordia</label>
+                <label for=""><input type="checkbox" name="" id="">Groupe Mutuel (Supra, Avenir, Mutuel, Easysana, Philos)</label>
+                <label for=""><input type="checkbox" name="" id="">SWICA</label>
+                <label for=""><input type="checkbox" name="" id="">Sympany</label>
+                <label for=""><input type="checkbox" name="" id="">Atupri</label>
+                <label for=""><input type="checkbox" name="" id="">Assura</label>
+                <label for=""><input type="checkbox" name="" id="">Sanitas</label>
+                <label for=""><input type="checkbox" name="" id="">Visana</label>
+                <label for=""><input type="checkbox" name="" id="">KPT</label>
+                <label for=""><input type="checkbox" name="" id="">Innova</label>
+            </fieldset>
+            <fieldset>
+                <label for=""><input type="radio">Basisleistungen zum günstigsten Preis</label>
+                <label for=""><input type="radio">Bestes Preis-/Leistungsverhältnis</label>
+                <label for=""><input type="radio">Bestes Leistungspaket</label>
+            </fieldset>
+            <fieldset>
+                <legend>Das möchte ich sonst noch mitteilen:</legend>
+                <textarea id="additional-info" name="additional-info" rows="5" placeholder="Ihre Nachricht hier..."></textarea>
+            </fieldset>
+            <button class="offerte-submit-button" onclick="submitOfferteForm()">Absenden</button>
+            <p>*durch das Klicken auf den Button akzeptierst du unsere Nutzungsbedingungen und unsere Datenschutzerklärung</p>
+        </div>
+    </form>
+</body>
+</html>

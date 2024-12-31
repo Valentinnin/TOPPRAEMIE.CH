@@ -1,0 +1,185 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    height: 100%;
+}
+.container {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(to bottom left, hsla(249, 100%, 82%, 0.872), #428affde);
+}
+header {
+    position: relative;
+    height: 250px;
+    width: 100%;
+    overflow: hidden;
+}
+#bannerbackground{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+#logo{
+    width: 500px;
+    height: auto;
+    position: absolute;
+    display: block;
+    object-fit: contain
+}
+.header-content{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    text-align: center;
+}
+.header-content p{
+    margin-top: 5px;
+    color: white;
+    font-size: 20px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+    margin-top: 80px;
+    margin-left: 10px;
+}
+nav {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px 0;
+}
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+nav ul li {
+    margin: 0 10px;
+}
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+nav ul li a:hover {
+    text-decoration: underline;
+}
+main {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+footer {
+    background-color: #f3f4f6;
+    padding: 10px;
+    text-align: center;
+}
+footer a {
+    color: #4b5563;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 0.9rem;
+}
+footer a:hover {
+    text-decoration: underline;
+}
+#marmortext{
+    position: fixed;
+    bottom: 0;
+    z-index: -1;
+    width: 100%;
+}
+#formCont1{
+    width: 100%;
+}
+.formCont2{
+    background-color: #d9efffd8;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 800px; /* Gleiche Maximalbreite für alle Schritte */
+    margin: 0 auto; /* Zentriert das Formular */
+}
+.rightButton{
+    width: 25%;
+    min-width: 150px;
+}
+.leftButton{
+    width: 25%;
+    min-width: 150px;
+}
+.buttonCont{
+    display: flex;
+    justify-content: space-between; /* Verteilte Ausrichtung der Buttons */
+    width: 80%;
+    max-width: 800px; /* Gleiche Maximalbreite wie das Formular */
+    margin: 0 auto;
+}
+.form-group {
+    margin-bottom: 15px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+button:hover {
+    background-color: #2563eb;
+}
+h2{
+    text-align: center;
+}
+.bold{
+    font-weight: bold;
+}
+.textAlignCenter{
+    text-align: center;
+}
+
+#einzelperson{
+    width: 100%;
+}
+.formcont{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 1px solid #999;
+    margin-bottom: 20px;
+}
+.formcont:last-of-type {
+    border-bottom: none;
+}
+.inputFeld {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+.inputlabel{
+    font-weight: bold;
+    margin-top: 15px;
+}
+input[type="date"]{
+    font-family: Arial, sans-serif;
+  }
+  .bestNutzerBedingung{
+    font-size: 15px;
+    margin: 0;
+  }

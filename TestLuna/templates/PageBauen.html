@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/formstyle.css">
+</head>
+<body  class="container">
+  <header>
+    <div class="logocont">
+      <a href="PageBauen.html"><img id="logo" src="../static/Bilder/logo2.png" alt="Toppraemie Logo"></a>
+      <h2 id="anim-text">Jetzt kostenlos vergleichen und bares Geld sparen</h2>
+  </div>
+    
+    <nav>
+        <ul>
+          <li><a href="PageBauen.html">Krankenkasse</a></li>
+          <li><a href="{{ url_for('haushaltsvers') }}">Haushaltsversicherung</a></li>
+          <li><a href="{{ url_for('wertsachvers') }}">Wertsachenversicherung</a></li>
+          <li><a href="{{ url_for('rechtsvers') }}">Rechtsschutz</a></li>
+          <li><a href="{{ url_for('autovers') }}">Autoversicherung</a></li>
+          <li><a href="{{ url_for('reisevers') }}">Reiseversicherung</a></li>
+          <li><a href="{{ url_for('tiervers') }}">Tierversicherung</a></li>
+          <li><a href="{{ url_for('vorsorgevers') }}">Vorsorge 3a/3b</a></li>
+          <li><a href="{{ url_for('steuererklärung') }}">Steuererklärung</a></li>
+        </ul>
+    </nav>
+  </header>
+  <main>
+    <div id="anfangscont" class="maincont">
+      <div class="seccont">
+        <h2 class="marginbot20px bigger">Willkommen zu deiner kostenlosen <br> Rechtsschutzofferte</h2>
+        <p class="biggerr">Wen möchtest du versichern?</p>
+        <div class="buttoncont">
+          <button onclick="showForm('form1')">Einzelperson</button>
+          <button onclick="showForm('form2')">mehrere Personen</button>
+        </div>
+      </div>
+    </div>
+    <div id="form1" class="maincont mitte backcolnone">
+      <form class="form" action="" method="POST">
+        <fieldset class="fieldset">
+          <h2 class="margintopbot20px fontsize30px">Nur noch 1 Schritt zu deiner kostenlosen Rechtsschutzofferte</h2>
+            <div class="inputcont">
+              <!--abkürzung RSS für RechtsSchutzSingel-->
+              <label for="nameRSS">Name / Vornname</label>
+              <input id="nameRSS" name="nameRSS" type="text">
+            </div>
+            <div class="inputcont">
+              <label for="gebDateRSS">Geburtsdatum</label>
+              <input id="gebDateRSS" name="gebDateRSS" type="date">
+            </div>
+            <div class="inputcont">
+              <label for="strasseHausNrRSS">Strassse / Hausnummer</label>
+              <input id="strasseHausNrRSS" name="strasseHausNrRSS" type="text">
+            </div>
+            <div class="inputcont">
+              <label for="ortPlzRSS">Ort / PLZ</label>
+              <input id="ortPlzRSS" name="ortPlzRSS" type="text">
+            </div>
+            <div class="inputcont">
+              <label for="emailRSS">Email</label>
+              <input id="emailRSS" name="emailRSS" type="email">
+            </div>
+            <div class="inputcont">
+              <label for="telRSS">Telefonnummer</label>
+              <input id="telRSS" name="telRSS" type="tel">
+            </div>
+        </fieldset>
+        <div class="divider"></div>
+        <fieldset>
+          <div class="inputcont">
+            <label for="selectGesellschaftRSS">Hast du bereits eine Rechtschutzvesicherung? Wenn ja, bei welcher Gesellschaft?</label>
+            <select id="selectGesellschaftRSS" name="selectGesellschaftRSS" >
+              <option value="" disabled selected>Bitte wähle eine Gesellschaft aus</option>
+              <option value="AXA">AXA Arag</option>
+              <option value="Mobiliar">Mobiliar Protekta</option>
+              <option value="Helvetia">Helvetia</option>
+              <option value="Coop">Coop</option>
+              <option value="TCS">TCS</option>
+              <option value="Dextra">Dextra</option>
+              <option value="Smile">Smile</option>
+              <option value="Fortuna">Fortuna Generali</option>
+              <option value="Elvia">Elvia</option>
+              <option value="Baloise">Baloise</option>
+              <option value="Orion">Orion</option>
+              <option value="CSS">CSS</option>
+              <option value="GroupeMutuel">Groupe Mutuel</option>
+              <option value="Helsana">Helsana</option>
+              <option value="Vaudoise">Vaudoise</option>
+              <option value="andererAnbieter">anderer Anbieter</option>
+          </select>
+          </div>
+          <fieldset class="radiofieldset">
+            <div class="radiocont">
+              <input id="keineRSS" name="keineRSS" type="checkbox" value="Ich habe keine Rechtsschutzversicherung" onclick="toggleSelectAndReset();">
+              <label for="keineRSS"><b>Ich habe keine Rechtschutzversicherung</b></label>
+            </div>
+           
+          </fieldset>
+        </fieldset>
+        <div class="divider"></div>
+        <fieldset class="radiofieldset">
+          <Legend class="legend">Hast du aktuell Rechtsstreitigkeiten oder Streitigkeiten die zu einem Rechtsfall führen können?</Legend>
+          <div class="radiocont">
+            <!--abkürzung RSKS RechtsStreitigKeitSingel-->
+            <input id="aktuelleRSKSNein" name="aktuelleRSKS" type="radio" value="per Telefon">
+            <label for="aktuelleRSKSNein">Nein</label>
+          </div>
+          <div class="radiocont">
+            <input id="aktuelleRSKSJa" name="aktuelleRSKS" type="radio" value="Online">
+            <label for="aktuelleRSKSJa">Ja</label>
+          </div>
+          <div class="radiocont">
+            <input id="aktuelleRSKSNichtSicher" name="aktuelleRSKS" type="radio" value="vor Ort">
+            <label for="aktuelleRSKSNichtSicher">Ich bin mir nicht sicher</label>
+          </div>
+        </fieldset>
+        
+        <div class="margintop10px">
+          <button class="subbutton" type="submit">Terminanfrage senden*</button>
+          <p class="margintop10px">*durch das Klicken auf den Button akzeptierst du unsere Nutzungsbedingungen und unsere Datenschutzerklärung</p>
+        </div>
+        
+      </form>
+    </div>
+    <div id="form2" class="maincont mitte backcolnone">
+      <form class="form" action="" method="POST">
+        <fieldset class="fieldset">
+          <h2 class="margintopbot20px fontsize30px">Nur noch 1 Schritt zu deiner kostenlosen Rechtsschutzofferte</h2>
+            <div class="inputcont">
+              <!--abkürzung RSM für RechtsSchutzMulti-->
+              <label for="nameRSM">Name / Vornname</label>
+              <input id="nameRSM" name="nameRSM" type="text">
+            </div>
+            <div class="inputcont">
+              <label for="gebDateRSM">Geburtsdatum</label>
+              <input id="gebDateRSM" name="gebDateRSM" type="date">
+            </div>
+            <div class="inputcont">
+              <label for="strasseHausNrRSM">Strassse / Hausnummer</label>
+              <input id="strasseHausNrRSM" name="strasseHausNrRSM" type="text">
+            </div>
+            <div class="inputcont">
+              <label for="ortPlzRSM">Ort / PLZ</label>
+              <input id="ortPlzRSM" name="ortPlzRSM" type="text">
+            </div>
+            <div class="inputcont">
+              <label for="emailRSM">Email</label>
+              <input id="emailRSM" name="emailRSM" type="email">
+            </div>
+            <div class="inputcont">
+              <label for="telRSM">Telefonnummer</label>
+              <input id="telRSM" name="telRSM" type="tel">
+            </div>
+        </fieldset>
+        <div class="divider"></div>
+        <fieldset>
+          <div class="inputcont">
+            <label for="selectGesellschaftRSM">Hast du bereits eine Rechtschutzvesicherung? Wenn ja, bei welcher Gesellschaft?</label>
+            <select id="selectGesellschaftRSM" name="selectGesellschaftRSM" >
+              <option value="" disabled selected>Bitte wähle eine Gesellschaft aus</option>
+              <option value="AXA">AXA Arag</option>
+              <option value="Mobiliar">Mobiliar Protekta</option>
+              <option value="Helvetia">Helvetia</option>
+              <option value="Coop">Coop</option>
+              <option value="TCS">TCS</option>
+              <option value="Dextra">Dextra</option>
+              <option value="Smile">Smile</option>
+              <option value="Fortuna">Fortuna Generali</option>
+              <option value="Elvia">Elvia</option>
+              <option value="Baloise">Baloise</option>
+              <option value="Orion">Orion</option>
+              <option value="CSS">CSS</option>
+              <option value="GroupeMutuel">Groupe Mutuel</option>
+              <option value="Helsana">Helsana</option>
+              <option value="Vaudoise">Vaudoise</option>
+              <option value="andererAnbieter">anderer Anbieter</option>
+          </select>
+          </div>
+          <fieldset class="radiofieldset">
+            <div class="radiocont">
+              <input id="keineRSM" name="keineRSM" type="radio" value="">
+              <label for="keineRSM"> <b> Ich habe keine Rechtschutzversicherung</b></label>
+            </div>
+           
+          </fieldset>
+        </fieldset>
+        <div class="divider"></div>
+        <fieldset class="radiofieldset">
+          <Legend class="legend">Hast du aktuell Rechtsstreitigkeiten oder Streitigkeiten die zu einem Rechtsfall führen können?</Legend>
+          <div class="radiocont">
+            <!--abkürzung RSKS RechtsStreitigKeitSingel-->
+            <input id="aktuelleRSKMNein" name="aktuelleRSKMNein" type="radio" value="Nein">
+            <label for="aktuelleRSKMNein">Nein</label>
+          </div>
+          <div class="radiocont">
+            <input id="aktuelleRSKMJa" name="aktuelleRSKMJa" type="radio" value="Ja">
+            <label for="aktuelleRSKMJa">Ja</label>
+          </div>
+          <div class="radiocont">
+            <input id="aktuelleRSKMNichtSicher" name="aktuelleRSKMNichtSicher" type="radio" value="Ich bin mir nicht sicher">
+            <label for="aktuelleRSKMNichtSicher">Ich bin mir nicht sicher</label>
+          </div>
+        </fieldset>
+        
+        <div class="margintop10px">
+          <button class="subbutton" type="submit">Terminanfrage senden*</button>
+          <p class="margintop10px">*durch das Klicken auf den Button akzeptierst du unsere Nutzungsbedingungen und unsere Datenschutzerklärung</p>
+        </div>
+        
+      </form>
+    </div>
+  </main>
+  <footer>
+    <a href="/Impressum.html" target="_self">Impressum</a>
+    <a href="/Nutzungsbedingungen.html" target="_self">Nutzungsbedingungen</a>
+    <a href="/Datenschutz.html" target="_self">Datenschutzerklärung</a>
+  </footer>
+  <script src="../static/form.js"></script>
+  
+</body>
+</html>

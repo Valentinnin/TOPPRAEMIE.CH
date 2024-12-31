@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bergbanner Webseite</title>
+
+         <link rel="stylesheet" href="{{ url_for('static', filename='Krankenkasse.css') }}"><!--Aktivieren/Deaktivieren für Python Server -->
+        <!--<link rel="stylesheet" href="../static/Krankenkasse.css">  Aktivieren/Deaktivieren für Python Server -->
+        <style>
+            .header-content a {
+                text-decoration: none;
+                color: inherit;
+            }
+        </style>
+    </head>
+<body>
+    <div class="container">
+        <header>
+            <!-- <img id="bannerbackground" src="../static/Bilder/Berg_Banner.jpg" alt="Mountain background">Aktivieren/Deaktivieren für Python Server -->
+            <img id="bannerbackground" src="{{ url_for('static', filename='Bilder/Berg_Banner.jpg') }}" alt="Mountain background"> <!-- Aktivieren/Deaktivieren für Python Server -->
+            <div class="header-content">
+                <a href="{{ url_for('index') }}">
+                    <!--<img id="logo" src="../../../Bilder/Toppraemie logo/logo2.png" alt="toppraemie Logo"> -->
+                    <img id="logo" src="{{ url_for('static', filename='Bilder/logo2.png') }}" alt="toppraemie Logo">
+                    <p>jetzt kostenlos vergleichen und bares Geld sparen</p>
+                </a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('krankenkasse') }}">Krankenkasse</a></li>
+                    <li><a href="{{ url_for('hausvers') }}">Haushaltsversicherung</a></li>
+                    <li><a href="{{ url_for('wertvers') }}">Wertsachenversicherung</a></li>
+                    <li><a href="{{ url_for('rechtschutz') }}">Rechtsschutz</a></li>
+                    <li><a href="{{ url_for('autoversicherung') }}">Autoversicherung</a></li>
+                    <li><a href="{{ url_for('reisevers') }}">Reiseversicherung</a></li>
+                    <li><a href="{{ url_for('tiervers') }}">Tierversicherung</a></li>
+                    <li><a href="{{ url_for('vorsorgevers') }}">Vorsorge 3a/3b</a></li>
+                    <li><a href="{{ url_for('steuererklärung') }}">Steuererklärung</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            
+            <img src="{{ url_for('static', filename='Bilder/Textur.jpg') }}" alt="Marmor Textur" id="marmortext"><!--Aktivieren/Deaktivieren für Python Server -->
+            <!--<img src="../static/Bilder/Textur.jpg" alt="" id="marmortext">Aktivieren/Deaktivieren für Python Server -->
+            <div id="krankenkasse-form-container">
+                <div class="form-containerKrankenkasse">
+                    <div id="initial-options">
+                        <h1 id="welcome-message">Willkommen zu deinem kostenlosen Krankenkassenvergleich</h1>
+                        <p>was können wir für dich tun?</p>
+                        <div>
+                            <button onclick="showForm('beratung')">Ich wünsche eine Beratung</button>
+                            <button onclick="showForm('offerte1')">Ich wünsche eine Offerte</button>
+                        </div>
+                    </div>
+
+                    <form id="beratung-form" style="display: none;" action="{{ url_for('send_email') }}" method="POST">
+                        <div class="formcont1 active">
+                            <h2>Noch 1 Schritt zu deinem <u>kostenlosen</u>  Beratungstermin</h2>
+                            <div class="formcont2">
+                                <label class="bold" for="vorname-beratung">Vorname / Name</label>
+                                <input class="marginbot15px" type="text" placeholder="Vorname / Name" name="vorname-beratung" id="vorname-beratung" >
+
+                                <label class="bold"for="geburtsdatumberatung">Geburtsdatum</label>
+                                <input class="marginbot15px" type="date" placeholder="" name="geburtsdatumberatung" id="geburtsdatumberatung" >
+
+                                <label class="bold"for="plz-beratung">Ort / PLZ</label>
+                                <input class="marginbot15px" type="text" placeholder="Ort oder Postleitzahl" name="plz-beratung" id="plz-beratung" >
+
+                                <label class="bold"for="email-beratung">Email</label>
+                                <input class="marginbot15px" type="email" placeholder="Email" name="email-beratung" id="email-beratung" >
+
+                                <label class="bold"for="tel-beratung">Telefonnummer</label>
+                                <input class="marginbot15px" type="tel" placeholder="Telefonnummer" name="tel-beratung" id="tel-beratung" >
+
+                                <label class="bold marginbot10px"for="selec-kk-beratung">Bei Welcher Krankenkasse bist du aktuell Versichert?</label>
+                                <select class="marginbot15px" id="selec-kk-beratung" name="kk-beratung" >
+                                    <option value="" disabled selected>Bitte wähle eine Krankenkasse aus</option>
+                                    <option value="Agrisano">Agrisano</option>
+                                    <option value="AMB">AMB</option>
+                                    <option value="Aquilana">Aquilana</option>
+                                    <option value="Assura">Assura</option>
+                                    <option value="Atupri">Atupri</option>
+                                    <option value="Avenir">Avenir</option>
+                                    <option value="Birchmeier">Birchmeier</option>
+                                    <option value="Concordia">Concordia</option>
+                                    <option value="CSS">CSS</option>
+                                    <option value="d'Entremont">d'Entremont</option>
+                                    <option value="Easysana">Easysana</option>
+                                    <option value="EGK">EGK</option>
+                                    <option value="Einsideln">Einsideln</option>
+                                    <option value="Galenos">Galenos</option>
+                                    <option value="Glarner">Glarner</option>
+                                    <option value="Helsana">Helsana</option>
+                                    <option value="KluG">KluG</option>
+                                    <option value="KPT">KPT</option>
+                                    <option value="KKLH">KKLH</option>
+                                    <option value="Masauns">Masauns</option>
+                                    <option value="Mutuel">Mutuel</option>
+                                    <option value="ÖKK">ÖKK</option>
+                                    <option value="Philos">Philos</option>
+                                    <option value="Rhenusana">Rhenusana</option>
+                                    <option value="Sana24">Sana24</option>
+                                    <option value="Salavals">Salavals</option>
+                                    <option value="Sanitas">Sanitas</option>
+                                    <option value="SLKK">SLKK</option>
+                                    <option value="Sodalis">Sodalis</option>
+                                    <option value="Steffisburg">Steffisburg</option>
+                                    <option value="Sumiswalder">Sumiswalder</option>
+                                    <option value="SUPRA">SUPRA</option>
+                                    <option value="SWICA">SWICA</option>
+                                    <option value="Sympany">Sympany</option>
+                                    <option value="Visana">Visana</option>
+                                    <option value="Visperterminen">Visperterminen</option>
+                                    <option value="Vita Surselva">Vita Surselva</option>
+                                    <option value="Vivacare">Vivacare</option>
+                                    <option value="Wäderswil">Wäderswil</option>
+                                </select>
+                                <p class="marginbot10px">Wie möchtest du Beraten werden?</p>
+                                <div class="radio-cont marginbot15px">
+                                    <div class="radio-group">
+                                        <label class="radio-option">
+                                            <input type="radio" name="beratung" value="online" />
+                                            <span>Online</span>
+                                        </label>
+                                        <label class="radio-option">
+                                            <input type="radio" name="beratung" value="telefon" />
+                                            <span>per Telefon</span>
+                                        </label>
+                                        <label class="radio-option">
+                                            <input type="radio" name="beratung" value="vor-ort" />
+                                            <span>vor Ort</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <label class="bold marginbot10px" for="thema-beratung">Welches Thema beschreibt deine Anfrage am besten?</label>
+                                <select id="thema-beratung" name="thema-beratung" >
+                                    <option value="" disabled selected>Bitte wähle ein Thema aus</option>
+                                    <option value="Günstige Prämie">Günstige Prämie</option>
+                                    <option value="bestes Preis-/Leistungsverhältnis">bestes Preis-/Leistungsverhältnis</option>
+                                    <option value="Bestes Leistungspaket">Bestes Leistungspaket</option>
+                                    <option value="Grundversicherung">Grundversicherung</option>
+                                    <option value="Zusatzversicherung">Zusatzversicherung</option>
+                                    <option value="Zusatzversicherung abgelehnt">Zusatzversicherung abgelehnt, was nun?</option>
+                                    <option value="Zahnspange und keine Versicherung">Zahnspange und keine Versicherung, was nun?</option>
+                                    <option value="Zahnversicherung">Zahnversicherung</option>
+                                    <option value="Dentalhygiene">Dentalhygiene</option>
+                                    <option value="Alternativmedizin">Alternativmedizin</option>
+                                    <option value="Massagen">Massagen</option>
+                                    <option value="Sport">Sport</option>
+                                    <option value="Fitness">Fitness</option>
+                                    <option value="Auslandversicheurng">Auslandversicheurng</option>
+                                    <option value="Familienrabatte">Familienrabatte</option>
+                                    <option value="Mutterschaft">Mutterschaft</option>
+                                    <option value="Schwangerschaft">Schwangerschaft</option>
+                                    <option value="Baby">Baby</option>
+                                    <option value="vorgeburtliche Anmeldung">vorgeburtliche Anmeldung</option>
+                                    <option value="Neu in der Schweiz">Neu in der Schweiz</option>
+                                    <option value="Umzug in die Schweiz">Umzug in die Schweiz</option>
+                                </select>
+                                <button type="submit" onsubmit="handleFormSubmit(event)">Terminanfrage senden*</button>
+                                <p class="bestNutzerBedingung">*durch das Klicken auf den Button akzeptierst du unsere <a href="">Nutzungsbedingungen</a> und unsere <a href="">Datenschutzerklärung</a></p>
+                            </div>
+                        </div>
+                    </form>
+
+                    <form id="offerte-form1" action="{{ url_for('send_email_second') }}" method="POST">
+                        <div  id="offerte-page1" style="display: none;">
+                            <h2>Noch 3 Schritte zu deinen <u>unverbindlichen</u> Krankenkassenofferten</h2>
+                            <div class="formcont2">
+                                <label class="bold" for="vorname-beratung">Vorname / Name</label>
+                                <input class="marginbot15px" type="text" placeholder="Vorname / Name" id="vorname-beratung" name="offerteName[]" >
+            
+                                <label class="bold" for="geburtsdatumberatung">Geburtsdatum</label>
+                                <input class="marginbot15px" type="date" placeholder="" id="geburtsdatumberatung" name="offerteGebDatum[]" >
+            
+                                <label class="bold" for="plz-beratung">Ort / PLZ</label>
+                                <input class="marginbot15px" type="text" placeholder="Ort oder Postleitzahl" id="plz-beratung" name="offertePlz" >
+            
+                                <label class="bold" for="email-beratung">Email</label>
+                                <input class="marginbot15px" type="email" placeholder="Email" id="email-beratung" name="offerteEmail" >
+            
+                                <label class="bold" for="tel-beratung">Telefonnummer</label>
+                                <input class="marginbot15px" type="tel" placeholder="Telefonnummer" id="tel-beratung" name="offerteTel" >
+            
+                                <label  class="bold" for="selec-kk-beratung">Bei Welcher Krankenkasse bist du aktuell Versichert?</label>
+                                <select class="marginbot15px" id="selec-kk-beratung" name="offerteKK[]" >
+                                    <option value="" disabled selected>Bitte wähle eine Krankenkasse aus</option>
+                                    <option value="Agrisano">Agrisano</option>
+                                    <option value="AMB">AMB</option>
+                                    <option value="Aquilana">Aquilana</option>
+                                    <option value="Assura">Assura</option>
+                                    <option value="Atupri">Atupri</option>
+                                    <option value="Avenir">Avenir</option>
+                                    <option value="Birchmeier">Birchmeier</option>
+                                    <option value="Concordia">Concordia</option>
+                                    <option value="CSS">CSS</option>
+                                    <option value="d'Entremont">d'Entremont</option>
+                                    <option value="Easysana">Easysana</option>
+                                    <option value="EGK">EGK</option>
+                                    <option value="Einsideln">Einsideln</option>
+                                    <option value="Galenos">Galenos</option>
+                                    <option value="Glarner">Glarner</option>
+                                    <option value="Helsana">Helsana</option>
+                                    <option value="KluG">KluG</option>
+                                    <option value="KPT">KPT</option>
+                                    <option value="KKLH">KKLH</option>
+                                    <option value="Masauns">Masauns</option>
+                                    <option value="Mutuel">Mutuel</option>
+                                    <option value="ÖKK">ÖKK</option>
+                                    <option value="Philos">Philos</option>
+                                    <option value="Rhenusana">Rhenusana</option>
+                                    <option value="Sana24">Sana24</option>
+                                    <option value="Salavals">Salavals</option>
+                                    <option value="Sanitas">Sanitas</option>
+                                    <option value="SLKK">SLKK</option>
+                                    <option value="Sodalis">Sodalis</option>
+                                    <option value="Steffisburg">Steffisburg</option>
+                                    <option value="Sumiswalder">Sumiswalder</option>
+                                    <option value="SUPRA">SUPRA</option>
+                                    <option value="SWICA">SWICA</option>
+                                    <option value="Sympany">Sympany</option>
+                                    <option value="Visana">Visana</option>
+                                    <option value="Visperterminen">Visperterminen</option>
+                                    <option value="Vita Surselva">Vita Surselva</option>
+                                    <option value="Vivacare">Vivacare</option>
+                                    <option value="Wäderswil">Wäderswil</option>
+                                </select>
+                                <p class="margin0 marginbot10px">Wie möchtest du Beraten werden?</p>
+                                <div class="radio-cont marginbot15px">
+                                    <div class="radio-group">
+                                        <label class="radio-option">
+                                            <input type="radio" name="offerteBeratung" value="online" />
+                                            <span>Online</span>
+                                        </label>
+                                        <label class="radio-option">
+                                            <input type="radio" name="offerteBeratung" value="telefon" />
+                                            <span>per Telefon</span>
+                                        </label>
+                                        <label class="radio-option">
+                                            <input type="radio" name="offerteBeratung" value="vor-ort" />
+                                            <span>vor Ort</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <label class="bold" for="thema-beratung">Welches Thema beschreibt deine Anfrage am besten?</label>
+                                <select class="marginbot15px" id="thema-beratung" name="offerteThemaBeratung[]" >
+                                    <option value="" disabled selected>Bitte wähle ein Thema aus</option>
+                                    <option value="Günstige Prämie">Günstige Prämie</option>
+                                    <option value="bestes Preis-/Leistungsverhältnis">bestes Preis-/Leistungsverhältnis</option>
+                                    <option value="Bestes Leistungspaket">Bestes Leistungspaket</option>
+                                    <option value="Grundversicherung">Grundversicherung</option>
+                                    <option value="Zusatzversicherung">Zusatzversicherung</option>
+                                    <option value="Zusatzversicherung abgelehnt">Zusatzversicherung abgelehnt, was nun?</option>
+                                    <option value="Zahnspange und keine Versicherung">Zahnspange und keine Versicherung, was nun?</option>
+                                    <option value="Zahnversicherung">Zahnversicherung</option>
+                                    <option value="Dentalhygiene">Dentalhygiene</option>
+                                    <option value="Alternativmedizin">Alternativmedizin</option>
+                                    <option value="Massagen">Massagen</option>
+                                    <option value="Sport">Sport</option>
+                                    <option value="Fitness">Fitness</option>
+                                    <option value="Auslandversicheurng">Auslandversicheurng</option>
+                                    <option value="Familienrabatte">Familienrabatte</option>
+                                    <option value="Mutterschaft">Mutterschaft</option>
+                                    <option value="Schwangerschaft">Schwangerschaft</option>
+                                    <option value="Baby">Baby</option>
+                                    <option value="vorgeburtliche Anmeldung">vorgeburtliche Anmeldung</option>
+                                    <option value="Neu in der Schweiz">Neu in der Schweiz</option>
+                                    <option value="Umzug in die Schweiz">Umzug in die Schweiz</option>
+                                </select>
+                                <p class="marginbot10px">Arbeitest du mehr als 8 Stunden beim gleichen Arbeitgeber?</p>
+                                <div class="radio-cont abstandkleiner">
+                                    <div class="radio-group">
+                                        <label class="radio-option">
+                                            <input type="radio" name="8harbeit[]" value="8harbeitja" id="8harbeittrue"/>
+                                            <span>Ja</span>
+                                        </label>
+                                        <label class="radio-option">
+                                            <input type="radio" name="8harbeit[]" value="8harbeitnein" id="8harbeitfalse"/>
+                                            <span>Nein</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="additionalPeople"></div>
+                            <button type="button" id="addPerson">eine weiter Person hinzufügen</button>
+                            <button class="weiterButton" type="button" onclick="showForm('offerte2')">Weiter zur Schritt 2</button>
+                            <button class="unwichtigerButton" onclick="showForm('beratung')">Ich wünsche lieber eine persönliche Beratung</button>
+                        </div>
+
+                        <div id="offerte-page-2"  style="display: none;">
+                            <h2>Noch 2 Schritte zu deinen <u>unverbindlichen</u> Krankenkassenofferten</h2>
+                            <fieldset class="fieldsetoffertepage2 price-options marginbot15px fieldset-container">
+                                <legend class="bold">Gewünschte Franchise</legend>
+                                <div class="price-option">
+                                    <input type="radio" id="300" name="franchise" value="300">
+                                    <label for="300">300,-</label>
+                                </div>
+                                <div class="price-option">
+                                    <input type="radio" id="500" name="franchise" value="500">
+                                    <label for="500">500,-</label>
+                                </div>
+                                <div class="price-option">
+                                    <input type="radio" id="1000" name="franchise" value="1000">
+                                    <label for="1000">1000,-</label>
+                                </div>
+                                <div class="price-option">
+                                    <input type="radio" id="1500" name="franchise" value="1500">
+                                    <label for="1500">1500,-</label>
+                                </div>
+                                <div class="price-option">
+                                    <input type="radio" id="2000" name="franchise" value="2000">
+                                    <label for="2000">2000,-</label>
+                                </div>
+                                <div class="price-option">
+                                    <input type="radio" id="2500" name="franchise" value="2500">
+                                    <label for="2500">2500,-</label>
+                                </div>
+                                <div class="price-option">
+                                    <input type="radio" id="kinder" name="franchise" value="kinder0">
+                                    <label for="kinder">0,-</label>
+                                </div>
+                                
+                            </fieldset>
+                            <fieldset class="fieldsetoffertepage2 price-options marginbot15px fieldset-container">
+                                <legend  class="bold">Gewünschtes Modell</legend>
+                                <div class="price-option">
+                                    <input type="radio" id="Telmed" name="modell" value="Telmed">
+                                    <label for="Telmed">Telmed</label>
+                                </div>
+                                <div class="price-option">
+                                    <input type="radio" id="Hausarzt" name="modell" value="Hausarzt">
+                                    <label for="Hausarzt">Hausarzt</label>
+                                </div>
+                                <div class="price-option">
+                                    <input type="radio" id="Gruppenpraxis" name="modell" value="Gruppenpraxis">
+                                    <label for="Gruppenpraxis">Gruppenpraxis</label>
+                                </div>
+                                <div class="price-option">
+                                    <input type="radio" id="Kombimodell" name="modell" value="Kombimodell">
+                                    <label for="Kombimodell">Kombimodell</label>
+                                </div>
+                                <div class="price-option">
+                                    <input type="radio" id="freie Arztwahl" name="modell" value="freie Arztwahl">
+                                    <label for="freie Arztwahl">freie Arztwahl</label>
+                                </div>
+                                <div class="price-option">
+                                    <input type="radio" id="nicht Relevant" name="modell" value="nicht Relevant">
+                                    <label for="nicht Relevant">nicht Relevant</label>
+                                </div>
+                            </fieldset>
+                            <fieldset class="fieldsetoffertepage2 marginbot15px dateinputcont fieldset-container">
+                                <p>*Nur Neuzuzügler: Wann hast du dich in der Gemeinde Angemeldet?</p>
+                                <input class="dateinput" type="date" name="datumzuzug">
+                            </fieldset>
+                            <fieldset class="fieldsetoffertepage2 checkcont">
+                                <legend class="bold marginbot10px">Diese Leistungen sind mir wichtig</legend>
+                                <div class="column">
+                                    <label class="labelcheck" for="basis"><input name="wichtigeLeistungen[]" class="checkbox-input" type="checkbox" id="basis" value="Basis Leistungen">Basis Leistungen (Transporte und Rettungen, Medikamente, Notfälle im Ausland, Spitalabdeckung ganze Schweiz)</label>
+                                    <label class="labelcheck" for="alternativ"><input name="wichtigeLeistungen[]" class="checkbox-input" type="checkbox" id="alternativ" value="Alternativmedizin">Alternativmedizin</label>
+                                    <label class="labelcheck" for="fitness"><input name="wichtigeLeistungen[]" class="checkbox-input" type="checkbox" id="fitness" value="Fitness/Sport">Fitness / Sport</label>
+                                    <label class="labelcheck" for="brillen"><input name="wichtigeLeistungen[]" class="checkbox-input" type="checkbox" id="brillen" value="Brillen/Linsen">Brillen / Linsen</label>
+                                </div>
+                                <div class="column">
+                                    <label class="labelcheck" for="vorsorge"><input name="wichtigeLeistungen[]" class="checkbox-input" type="checkbox" id="vorsorge" value="Vorsorge/Check-up">Vorsorge / Check-up</label>
+                                    <label class="labelcheck" for="dentalhygiene"><input name="wichtigeLeistungen[]" class="checkbox-input" type="checkbox" id="dentalhygiene" value="Dentalhygiene">Dentalhygiene</label>
+                                    <label class="labelcheck" for="zahnbehandlungen"><input name="wichtigeLeistungen[]" class="checkbox-input" type="checkbox" id="zahnbehandlungen" value="Zahnbehandlungen">Zahnbehandlungen</label>
+                                    <label class="labelcheck" for="zahnspangen"><input name="wichtigeLeistungen[]" class="checkbox-input" type="checkbox" id="zahnspangen" value="Zahnspangen">Zahnspangen</label>
+                                </div>
+                                <div class="column">
+                                    <label class="labelcheck" for="spitalkomfort"><input name="wichtigeLeistungen[]" class="checkbox-input" type="checkbox" id="spitalkomfort" value="Spitalkomfort">Spitalkomfort (Einzel- oder Zweibettzimmer, erweiterte Besuchszeit etc.)</label>
+                                    <label class="labelcheck" for="spitalbehandlungen"><input name="wichtigeLeistungen[]" class="checkbox-input" type="checkbox" id="spitalbehandlungen" value="Spitalbehandlungen">Spitalbehandlungen (Freie Arztwahl bzw. Ober-Chefarzt, beste Medizin, Fasttrack etc.)</label>
+                                    <label class="labelcheck" for="erweitert"><input name="wichtigeLeistungen[]" class="checkbox-input" type="checkbox" id="erweitert" value="erweiterte Leistungen">erweiterte Leistungen (Wahlbehandlungen im Ausland, Risikosport bzw. Wagnisse)</label>
+                                    <label class="labelcheck" for="kapitalleistung"><input name="wichtigeLeistungen[]" class="checkbox-input" type="checkbox" id="kapitalleistung" value="Kapitalleistungen bei Tod/Invalidität">Kapitalleistung bei Tod / Invalidität</label>
+                                </div>
+                            </fieldset>
+                            <button class="weiterButton" type="button" onclick="showForm('offerte3')">Weiter zu Schritt 3</button>
+                            <button class="zurückButton" type="button" onclick="showForm('offerte1')">Zurück zu Schritt 1</button>
+                            <button class="unwichtigerButton" type="button" onclick="showForm('beratung')">Ich wünsche lieber eine persönliche Beratung</button>
+                            
+                        </div>
+
+                        <div id="offerte-page-3"  style="display: none;">
+                            <h2>Noch 1 Schritt zu deinen <u>unverbindlichen</u> Krankenkassenofferten</h2>
+                            <fieldset class="fieldsetoffertepage2 insurance-providers marginbot15px fieldset-container margin20px">
+                                <legend class="bold marginbot15px">Gewünschte Krankenkasse(n)</legend>
+                                <div class="column">
+                                    <label class="labelcheck" for="Helsana"><input class="checkbox-input" type="checkbox" id="Helsana" value="Helsana" name="gewKK[]" value="Helsana">Helsana</label>
+                                    <label class="labelcheck" for="CSS"><input class="checkbox-input" type="checkbox" id="CSS" value="CSS" name="gewKK[]" value="CSS">CSS</label>
+                                    <label class="labelcheck" for="Concordia"><input class="checkbox-input" type="checkbox" id="Concordia" value="Concordia" name="gewKK[]" value="Concordia">Concordia</label>
+                                    <label class="labelcheck" for="GroupeMutuel"><input class="checkbox-input" type="checkbox" id="GroupeMutuel" value="GroupeMutuel" name="gewKK[]" value="GroupeMutuel">Groupe Mutuel (Mutuel, Avenir, Philos)</label>
+                                </div>
+                                <div class="column">
+                                    <label class="labelcheck" for="ÖKK"><input class="checkbox-input" type="checkbox" id="ÖKK" value="ÖKK" name="gewKK[]" value="ÖKK">ÖKK</label>
+                                    <label class="labelcheck" for="SWICA"><input class="checkbox-input" type="checkbox" id="SWICA" value="SWICA" name="gewKK[]" value="SWICA">SWICA</label>
+                                    <label class="labelcheck" for="Sympany"><input class="checkbox-input" type="checkbox" id="Sympany" value="Sympany" name="gewKK[]" value="Sympany">Sympany</label>
+                                    <label class="labelcheck" for="Atupri"><input class="checkbox-input" type="checkbox" id="Atupri" value="Atupri" name="gewKK[]" value="Atupri">Atupri</label>
+                                </div>
+                                <div class="column">
+                                    <label class="labelcheck" for="Assura"><input class="checkbox-input" type="checkbox" id="Assura" value="Assura" name="gewKK[]" value="Assura">Assura</label>
+                                    <label class="labelcheck" for="Sanitas"><input class="checkbox-input" type="checkbox" id="Sanitas" value="Sanitas" name="gewKK[]" value="Sanitas">Sanitas</label>
+                                    <label class="labelcheck" for="Visana"><input class="checkbox-input" type="checkbox" id="Visana" value="Visana" name="gewKK[]" value="Visana">Visana</label>
+                                    <label class="labelcheck" for="KPT"><input class="checkbox-input" type="checkbox" id="KPT" value="KPT" name="gewKK[]" value="KPT">KPT</label>
+                                </div>
+                            </fieldset>
+                            <fieldset class="fieldsetoffertepage2 price-options margin20px fieldset-container">
+                                <legend class="bold marginbot10px">Das ist mir wichtig</legend>
+                                <div>
+                                    <input type="radio" id="günstigsterPreis" name="wunsch" value="Basisleistungen zum günstigsten Preis">
+                                    <label for="günstigsterPreis">Basisleistungen zum günstigsten Preis</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="bestPreisLeistungVerhaeltnis" name="wunsch" value="Bestes Preis-/Leistungsverhältnis">
+                                    <label for="bestPreisLeistungVerhaeltnis">Bestes Preis-/Leistungsverhältnis</label>
+                                </div>
+                                <div class="margin20px">
+                                    <input type="radio" id="bestLeistPaket" name="wunsch" value="Bestes Leistungspaket">
+                                    <label for="bestLeistPaket">Bestes Leistungspaket</label>
+                                </div>
+                            </fieldset>
+                            <fieldset class="fieldsetoffertepage2 price-options marginbot15px fieldset-container">
+                                <legend class="bold">Das möchte ich sonst noch mitteilen:</legend>
+                                <textarea class="textarea" id="additional-info" name="zusatzinfo" rows="5" placeholder="Ihre Nachricht hier..."></textarea>
+                            </fieldset>
+                            <button class="zurückButton" type="button" onclick="showForm('offerte2')">Zurück zur Schritt 2</button>
+                            <button class="offerte-submit-button" type="submit">Offerte Anfordern*</button>
+                            <p class="bestNutzerBedingung">*durch das Klicken auf den Button akzeptierst du unsere <a href="">Nutzungsbedingungen</a> und unsere <a href="">Datenschutzerklärung</a></p>
+                            <button class="unwichtigerButton" type="button" onclick="showForm('beratung')">Ich wünsche lieber eine persönliche Beratung</button>
+                        </div>
+                    </form>
+                </div>    
+            </div>
+        </main>
+
+        <footer>
+            <a href="/Impressum.html" target="_self">Impressum</a>
+            <a href="/Nutzungsbedingungen.html" target="_self">Nutzungsbedingungen</a>
+            <a href="/Datenschutz.html" target="_self">Datenschutzerklärung</a>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='Krankenkasse.js') }}"></script>
+    <!--<script src="../static/Krankenkasse.js"></script>-->
+</body>
+</html>

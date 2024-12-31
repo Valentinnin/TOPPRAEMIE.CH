@@ -1,0 +1,280 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: Arial, sans-serif;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('Bilder/Mat2.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  z-index: -1; /* Damit das Bild hinter dem Inhalt bleibt */
+}
+
+.content {
+  padding: 20px;
+  height: 200vh; /* Simuliert eine längere Seite zum Scrollen */
+  background-color: rgba(97, 41, 41, 0.224); /* Leicht transparente Hintergrundfarbe für den Text */
+}
+
+header{
+  color: white;
+  min-height: 30px;
+  position: relative;
+  height: 95vh; /* Volle Höhe des Bildschirms */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Horizontales Zentrieren */
+  align-items: center;     /* Vertikales Zentrieren */
+  animation: shrinkHeader 1s ease forwards; /* Animation zur Verkleinerung des Headers */
+  animation-delay: 2s; /* Verzögerung, bis die Logo-Animation abgeschlossen ist */
+  
+}
+
+/* Animation für das Header-Schrumpfen */
+@keyframes shrinkHeader {
+  0% {
+    height: 95vh; /* Start bei voller Bildschirmhöhe */
+  }
+  99% {
+    height: 95vh;
+  }
+  100% {
+    height: 25vh; /* Am Ende nimmt der Header 25% der Höhe ein */
+  }
+}
+#logo{
+  width: 100%;  /* Stelle sicher, dass du eine passende Breite festlegst */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);  /* Zentriert das Logo in der Mitte */
+  animation: moveLogo 2s ease forwards;  /* Die Animation dauert 5 Sekunden */
+  border-radius: 10px;
+  animation-delay: 1s;
+  background-color: rgba(255, 255, 255, 0.765); 
+}
+#anim-text {
+  position: absolute;
+  text-shadow: 2px 2px 5px black, -2px -2px 5px gray;
+  top: calc(10px + 130px);  /* 10px Abstand von oben + Logo-Höhe */
+  left: 10px;
+  opacity: 0;  /* Anfangs unsichtbar */
+  font-size: 18px;
+  color: white;
+  animation: fadeInText 2s ease forwards;
+  animation-delay: 3s;  /* Verzögerung, bis die Logo-Animation abgeschlossen ist */
+}
+.logocont {
+  display: flex;
+  flex-direction: column; /* Anordnung der Elemente untereinander */
+  justify-content: center; /* Zentriert die Inhalte */
+  align-items: center;     /* Zentriert horizontal */
+  height: 100vh;           /* Volle Höhe des Viewports */
+  overflow: hidden;
+}
+@keyframes moveLogo {
+  0% {
+    top: 50%;
+    left: 50%;
+    background-color: rgba(255, 255, 255, 0.765); 
+    border-radius: 5px;
+    transform: translate(-50%, -50%);
+    
+  }
+  100% {
+    top: 10px;  /* Position nach oben */
+    left: 10px;  /* Position nach links */
+    width: 800px;
+    transform: translate(0, 0);  /* Kein weiteres Verschieben */
+    background-color: transparent;
+  }
+}
+@keyframes fadeInText {
+  0% {
+    opacity: 0;  /* Text unsichtbar */
+  }
+  100% {
+    opacity: 1;  /* Text sichtbar */
+  }
+}
+
+
+h2{
+  margin: 0;  
+}
+
+nav {
+  position: absolute;
+  opacity: 0; 
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px 0;
+  animation: fadeInText 2s ease forwards;
+  animation-delay: 3s; 
+}
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+nav ul li {
+  margin: 0 10px;
+}
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+main{
+  flex-grow: 1;
+  background: linear-gradient(140deg, rgba(204, 223, 145, 0.406) 0%, rgba(118, 209, 232, 0.521) 50%, rgba(58, 217, 106, 0.543) 100%);
+  opacity: 0; 
+  animation: fadeInText 1s ease forwards;
+  animation-delay: 3s;
+  width: auto;
+  height: auto;
+}
+
+footer {
+  background-color: #f3f4f6bc;
+  padding: 10px;
+  text-align: center;
+  opacity: 0;
+  animation: fadeInText 2s ease forwards;
+  animation-delay: 3s;
+}
+footer a {
+  color: #4b5563;
+  text-decoration: none;
+  margin: 0 10px;
+  font-size: 0.9rem;
+}
+footer a:hover {
+  text-decoration: underline;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;  /* Container nimmt mindestens die Höhe des Viewports ein */
+  overflow: hidden;
+}
+/* Animationen erst durch eine 'animate' Klasse starten */
+header.animate, #logo.animate, #anim-text.animate, nav.animate, main.animate, footer.animate {
+  animation-play-state: running;  /* Spielt die Animation ab */
+}
+
+/* Standardmäßig wird die Animation pausiert */
+header, #logo, #anim-text, nav, main, footer {
+  animation-play-state: paused;
+}
+
+
+#start-animation {
+  margin-top: 500px;  /* Fügt einen Abstand zum Logo hinzu */
+  padding: 10px 20px;
+  background-color: #307533;
+  color: white;
+  font-size: 50px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+#start-animation:hover {
+  background-color: #36a93b; /* Hover-Effekt */
+}
+/* Fade-out Animation für den Button */
+@keyframes fadeOutButton {
+  0% {
+    opacity: 1; /* Button ist sichtbar */
+  }
+  100% {
+    opacity: 0; /* Button wird unsichtbar */
+    pointer-events: none; /* Button kann nicht mehr geklickt werden */
+  }
+}
+
+/* Animation anwenden */
+#start-animation.fade-out {
+  animation: fadeOutButton 1s ease forwards; /* Fade-out dauert 2 Sekunden */
+}
+
+.maincont{
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
+  margin-top: 50px;
+  background-color: rgba(255, 255, 255, 0.616);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 800px;
+}
+.grid-layout {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);  
+  grid-template-rows: repeat(5, auto); 
+  gap: 10px;  /* Abstand zwischen den Elementen */
+  list-style-type: none;  /* Entfernt die Bulletpoints der Liste */
+  padding: 0;
+}
+
+.grid-layout li {
+  text-align: center;
+}
+.seccont{
+  margin: 10px;
+}
+#optionen li{
+  color: white;
+  display: block;
+  font-size: 20px;
+  background-color: #307533;
+  border-radius: 10px;
+  transition: background-color 0.2s ease;
+}
+#optionen li a{
+  display: block;
+  padding: 20px;
+}
+
+#optionen li:hover{
+  color: white;
+  background-color: #36a93b;
+  border-radius: 10px;
+  cursor: pointer;
+}
+a:link {
+  color: inherit; /* Erbt die Standardtextfarbe des umgebenden Elements */
+  text-decoration: none; /* Entfernt die Unterstreichung */
+}
+
+.marginbot20px{
+  margin-bottom: 20px;
+}
+
+a:visited {
+  color: white; 
+}

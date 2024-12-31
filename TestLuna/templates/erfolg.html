@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='formstyle.css') }}">
+</head>
+<body  class="container">
+  <header>
+    <div class="logocont">
+      <a href="{{ url_for('index') }}"><img id="logo" src="{{ url_for('static', filename='Bilder/logo2.png') }}" alt="Toppraemie Logo"></a>
+      <h2 id="anim-text">Jetzt kostenlos vergleichen und bares Geld sparen</h2>
+  </div>
+    
+    <nav>
+        <ul>
+          <li><a href="{{ url_for('krankenkasse') }}">Krankenkasse</a></li>
+          <li><a href="{{ url_for('haushaltsvers') }}">Haushaltsversicherung</a></li>
+          <li><a href="{{ url_for('wertsachvers') }}">Wertsachenversicherung</a></li>
+          <li><a href="{{ url_for('rechtsvers') }}">Rechtsschutz</a></li>
+          <li><a href="{{ url_for('autovers') }}">Autoversicherung</a></li>
+          <li><a href="{{ url_for('reisevers') }}">Reiseversicherung</a></li>
+          <li><a href="{{ url_for('tiervers') }}">Tierversicherung</a></li>
+          <li><a href="{{ url_for('vorsorgevers') }}">Vorsorge 3a/3b</a></li>
+          <li><a href="{{ url_for('steuererklärung') }}">Steuererklärung</a></li>
+        </ul>
+    </nav>
+  </header>
+  <main>
+    <div class="maincont">
+      <div class="seccont">
+        <h2 class="marginbot20px bigger">Vielen Dank für Ihre Anfrage</h2>
+        <p class="biggerr">Wir werden uns so schnell wie möglich bei Ihnen melden.</p>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <a href="/Impressum.html" target="_self">Impressum</a>
+    <a href="/Nutzungsbedingungen.html" target="_self">Nutzungsbedingungen</a>
+    <a href="/Datenschutz.html" target="_self">Datenschutzerklärung</a>
+  </footer>
+</body>
+</html>

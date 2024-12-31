@@ -16,18 +16,16 @@
 <body>
     <div class="container">
         <header>
-            <a href="/Main.html">
-                <img src="/Bilder/Berg_Banner.jpg" alt="Mountain background">
-            </a>
+            <img id="bannerbackground" src="/Bilder/Berg_Banner.jpg" alt="Mountain background">
             <div class="header-content">
                 <a href="/Main.html">
-                    <h1>toppraemie.ch</h1>
+                    <img id="logo" src="Bilder/Toppraemie logo/logo2.png" alt="toppraemie Logo">
+                    <p>jetzt kostenlos vergleichen und bares Geld sparen</p>
                 </a>
-                <p>jetzt kostenlos vergleichen und bares Geld sparen</p>
             </div>
             <nav>
                 <ul>
-                    <li><a href="/Module/Krankenkasse/Krankenkasse.html">Krankenkasse</a></li>
+                    <li><a href="/Module/Krankenkasse/templates/Krankenkasse.html">Krankenkasse</a></li>
                     <li><a href="/Module/Haushaltsversicherung/Haushaltsversicherung.html">Haushaltsversicherung</a></li>
                     <li><a href="/Module/Wertsachenversicherung/Wertsachenversicherung.html">Wertsachenversicherung</a></li>
                     <li><a href="/Module/Rechtsschutz/Rechtsschutz.html">Rechtsschutz</a></li>
@@ -41,14 +39,16 @@
         </header>
         
         <main>
+            <img src="Bilder/Textur.jpg" alt="Marmor Textur" id="marmortext">
+            <h2>Wir können Ihnen helfen die beste Prämie für Sich zu finden!</h2>
             <div class="form-container">
                 <form id="interestForm">
                     <div class="form-group">
-                        <label for="name">Bitte geben Sie Ihren Namen ein</label>
+                        <label for="name" class="colorwhite">Bitte geben Sie Ihren Namen ein</label>
                         <input type="text" id="name" name="name" required placeholder="Ihr Name">
                     </div>
                     <div class="form-group">
-                        <label for="interest">Bitte wählen Sie das Thema, für das Sie sich Interessieren</label>
+                        <label for="interest" class="colorwhite">Bitte wählen Sie ein Thema, welches Sie Interessiert</label>
                         <select id="interest" name="interest" required>
                             <option value="" disabled selected>Wählen Sie ein Thema</option>
                             <option value="Krankenkasse">Krankenkasse</option>
@@ -75,18 +75,7 @@
     </div>
 
     <script>
-        document.getElementById('interestForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            const name = document.getElementById('name').value;
-            const interest = document.getElementById('interest').value;
-            
-            // Store the name and interest in sessionStorage
-            sessionStorage.setItem('userName', name);
-            sessionStorage.setItem('userInterest', interest);
-            
-            // Redirect to the appropriate HTML file in the Module folder
-            window.location.href = `/Module/${interest}/${interest}.html`;
-        });
+       
     </script>
 </body>
 </html>

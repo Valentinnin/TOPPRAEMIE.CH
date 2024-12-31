@@ -1,0 +1,195 @@
+body{
+  margin: 0;
+  width: 100%;
+  background-color: rgb(49, 49, 49);
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: white;
+  
+}
+h1, p{
+  margin: 0;
+  padding: 10px;
+}
+.überschrift{
+  font-size: 5rem;
+  margin-left: 80px;
+  margin-top: 80px;
+}
+.cont{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  gap: 50px;
+}
+
+.card{
+  width: 500px;
+  height: 500px;
+  position: relative;
+  border-radius: 10px;
+}
+
+.card1{
+  width: inherit;
+  height: inherit;
+  position: relative;
+  border-radius: 10px;
+  background-color: rgb(48, 79, 114);
+}
+
+.card1::before, .card::after{
+  content: '';
+  position: absolute;
+  top: 50%;
+ left: 50%;
+ transform: translate(-50%, -50%);
+  width: 100%;
+  border-radius: 10px;
+  height: 100%;
+  padding: 5px;
+  background-image: conic-gradient(from var(--angle), rgb(158, 255, 132), rgb(59, 200, 240), rgb(158, 255, 132));
+  z-index: -1;
+  animation: 3s spin linear infinite;
+}
+
+.card::after{
+  filter: blur(1rem);
+  opacity: 0.5;
+}
+
+@keyframes appearLeft {
+  from{
+    opacity: 0;
+    /*scale: 0.5;*/
+    transform: translateX(-200px);
+    /*clip-path: inset(100% 100% 0 0);*/
+  }
+  to{
+    opacity: 1;
+    /*scale: 1;*/
+    transform: translateX(0);
+    /*clip-path: inset(0 0 0 0);*/
+  }
+}
+
+.appearLeft{
+  animation: appearLeft linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
+}
+
+@property --angle{
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+@keyframes spin{
+  from{
+    --angle: 0deg;
+  }
+  to{
+    --angle: 360deg;
+  }
+ }
+.inhalt{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+}
+
+@keyframes rotate {
+  0%{
+    transform: rotate(0);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}
+
+.rotate{
+  animation: rotate 2s linear infinite;
+}
+
+.inhalt p{
+  font-size: 2rem;
+}
+.box{
+  width: 200px;
+  height: 200px;
+  border: 10px solid rgb(0, 191, 255);
+  border-radius: 20px;
+  position: relative;
+}
+.box::after{
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  border: 10px solid rgb(0, 191, 255);
+  border-radius: 20px;
+  filter: blur(0.5rem);
+}
+
+@keyframes flip {
+  0%{
+    transform: rotateX(0deg);
+  }
+  50%{
+    transform: rotateX(180deg) rotatez(0deg);
+
+  }
+  100%{
+    transform: rotatez(180deg);
+  }
+  
+}
+.flip{
+  animation: flip 3s ease-in-out infinite;
+}
+.cardüberschrift{
+  font-size: 2rem;
+}
+@keyframes disappear {
+  0%{
+    opacity: 1;
+  }
+  50%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+.disappear{
+  animation: disappear 2s ease-out infinite;
+}
+
+.flower{
+  background-color: none;
+  background-image: url(crocus.jpg);
+  background-size: cover;
+}
+.glass{
+  width: 300px;
+  height: 300px;
+  background-color: rgba(255, 255, 255, 0);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(255, 255, 255, 0.4);
+  border-left: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.089);
+}
+
+.backgroundclip{
+  background-image: url(crocus.jpg);
+  background-size: cover;
+  color: transparent;
+  -webkit-background-clip: text; /* Für WebKit-Browser wie Chrome und Safari */
+  -webkit-text-fill-color: transparent; /* Spezifisch für WebKit-Browser */
+}
