@@ -15,15 +15,15 @@
     
     <nav>
         <ul>
-          <li><a href="PageBauen.html">Krankenkasse</a></li>
-          <li><a href="{{ url_for('haushaltsvers') }}">Haushaltsversicherung</a></li>
-          <li><a href="{{ url_for('wertsachvers') }}">Wertsachenversicherung</a></li>
-          <li><a href="{{ url_for('rechtsvers') }}">Rechtsschutz</a></li>
-          <li><a href="{{ url_for('autovers') }}">Autoversicherung</a></li>
-          <li><a href="{{ url_for('reisevers') }}">Reiseversicherung</a></li>
-          <li><a href="{{ url_for('tiervers') }}">Tierversicherung</a></li>
-          <li><a href="{{ url_for('vorsorgevers') }}">Vorsorge 3a/3b</a></li>
-          <li><a href="{{ url_for('steuererklärung') }}">Steuererklärung</a></li>
+          <li><a class="seclink" href="PageBauen.html">Krankenkasse</a></li>
+          <li><a class="seclink"  href="{{ url_for('haushaltsvers') }}">Haushaltsversicherung</a></li>
+          <li><a class="seclink"  href="{{ url_for('wertsachvers') }}">Wertsachenversicherung</a></li>
+          <li><a id="mainlink" href="{{ url_for('rechtsvers') }}">Rechtsschutz</a></li>
+          <li><a class="seclink"  href="{{ url_for('autovers') }}">Autoversicherung</a></li>
+          <li><a class="seclink"  href="{{ url_for('reisevers') }}">Reiseversicherung</a></li>
+          <li><a class="seclink"  href="{{ url_for('tiervers') }}">Tierversicherung</a></li>
+          <li><a class="seclink"  href="{{ url_for('vorsorgevers') }}">Vorsorge 3a/3b</a></li>
+          <li><a class="seclink"  href="{{ url_for('steuererklärung') }}">Steuererklärung</a></li>
         </ul>
     </nav>
   </header>

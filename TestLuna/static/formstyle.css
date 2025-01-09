@@ -63,12 +63,28 @@ header {
   color: white;
 }
 
+#mainlink{
+  background-color: rgba(34, 175, 123, 0.582);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.seclink{
+  transition:0.5s;
+  
+}
+
+.seclink:hover{
+  background-color: rgba(23, 166, 114, 0.733);
+  padding: 10px;
+  border-radius: 5px;
+}
 nav {
   position: absolute;
   opacity: 1; /* Endwert der Animation */
   bottom: 0;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.6);
   padding: 10px 0;
 }
 
@@ -87,7 +103,7 @@ nav ul li {
 nav ul li a {
   color: white;
   text-decoration: none;
-  font-size: 0.9rem;
+  font-size: 1.2rem;
 }
 
 nav ul li a:hover {
