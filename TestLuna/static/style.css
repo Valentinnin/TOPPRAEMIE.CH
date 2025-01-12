@@ -113,6 +113,23 @@ header{
 }
 
 
+#mainlink{
+  background-color: rgba(34, 175, 123, 0.582);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.seclink{
+  transition:0.3s;
+  
+}
+
+.seclink:hover{
+  background-color: rgba(23, 166, 114, 0.733);
+  padding: 10px;
+  border-radius: 5px;
+}
+
 h2{
   margin: 0;  
 }

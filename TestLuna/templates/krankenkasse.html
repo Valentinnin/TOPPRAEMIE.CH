@@ -15,15 +15,15 @@
     
     <nav>
         <ul>
-          <li><a href="{{ url_for('krankenkasse') }}">Krankenkasse</a></li>
-          <li><a href="{{ url_for('haushaltsvers') }}">Haushaltsversicherung</a></li>
-          <li><a href="{{ url_for('wertsachvers') }}">Wertsachenversicherung</a></li>
-          <li><a href="{{ url_for('rechtsvers') }}">Rechtsschutz</a></li>
-          <li><a href="{{ url_for('autovers') }}">Autoversicherung</a></li>
-          <li><a href="{{ url_for('reisevers') }}">Reiseversicherung</a></li>
-          <li><a href="{{ url_for('tiervers') }}">Tierversicherung</a></li>
-          <li><a href="{{ url_for('vorsorgevers') }}">Vorsorge 3a/3b</a></li>
-          <li><a href="{{ url_for('steuererklärung') }}">Steuererklärung</a></li>
+          <li><a id="mainlink" href="{{ url_for('krankenkasse') }}">Krankenkasse</a></li>
+          <li><a class="seclink" href="{{ url_for('haushaltsvers') }}">Haushaltsversicherung</a></li>
+          <li><a class="seclink" href="{{ url_for('wertsachvers') }}">Wertsachenversicherung</a></li>
+          <li><a class="seclink" href="{{ url_for('rechtsvers') }}">Rechtsschutz</a></li>
+          <li><a class="seclink" href="{{ url_for('autovers') }}">Autoversicherung</a></li>
+          <li><a class="seclink" href="{{ url_for('reisevers') }}">Reiseversicherung</a></li>
+          <li><a class="seclink" href="{{ url_for('tiervers') }}">Tierversicherung</a></li>
+          <li><a class="seclink" href="{{ url_for('vorsorgevers') }}">Vorsorge 3a/3b</a></li>
+          <li><a class="seclink" href="{{ url_for('steuererklärung') }}">Steuererklärung</a></li>
         </ul>
     </nav>
   </header>
@@ -44,30 +44,30 @@
           <h2 class="margintopbot20px fontsize30px">Nur noch 1 Schritt zu deinem kostenlosen Beratungstermin</h2>
             <div class="inputcont">
               <label for="nameBeratung">Name / Vornname</label>
-              <input id="nameBeratung" name="nameBeratung" type="text">
+              <input id="nameBeratung" name="nameBeratung" type="text" placeholder="z.B. Mustermann Max" required>
             </div>
             <div class="inputcont">
               <label for="gebDateBeratung">Geburtsdatum</label>
-              <input id="gebDateBeratung" name="gebDateBeratung" type="date">
+              <input id="gebDateBeratung" name="gebDateBeratung" type="date" required>
             </div>
             <div class="inputcont">
               <label for="ortPlzBeratung">Ort / PLZ</label>
-              <input id="ortPlzBeratung" name="ortPlzBeratung" type="text">
+              <input id="ortPlzBeratung" name="ortPlzBeratung" type="text" placeholder="z.B. 3654 Gunten" required>
             </div>
             <div class="inputcont">
               <label for="emailBeratung">Email</label>
-              <input id="emailBeratung" name="emailBeratung" type="email">
+              <input id="emailBeratung" name="emailBeratung" type="email" placeholder="z.B. max.mustermann@gmail.com" required>
             </div>
             <div class="inputcont">
               <label for="telBeratung">Telefonnummer</label>
-              <input id="telBeratung" name="telBeratung" type="tel">
+              <input id="telBeratung" name="telBeratung" type="tel" placeholder="z.B. 079 111 11 11" required>
             </div>
         </fieldset>
         <div class="divider"></div>
         <fieldset>
           <div class="inputcont">
             <label for="selec-kk-beratung">Bei welcher Krankenkasse bist du aktuell Versichert?</label>
-            <select id="selec-kk-beratung" name="kk-beratung" >
+            <select id="selec-kk-beratung" name="kk-beratung" required>
               <option value="" disabled selected>Bitte wähle eine Krankenkasse aus</option>
               <option value="Agrisano">Agrisano</option>
               <option value="AMB">AMB</option>
@@ -115,24 +115,28 @@
         <fieldset class="radiofieldset">
           <Legend class="legend">Wie möchtest du beraten werden?</Legend>
           <div class="radiocont">
-            <label for="perTelBeratung">per Telefon</label>
-            <input id="perTelBeratung" name="beratungsweiseBeratung" type="radio" value="per Telefon">
+            <input id="perTelBeratung" name="beratungsweiseBeratung" type="radio" value="per Telefon" required checked>
+            <label  class="higlight" for="perTelBeratung">per Telefon</label>
+            
           </div>
           <div class="radiocont">
-            <label for="perOnlineBeratung">Online</label>
             <input id="perOnlineBeratung" name="beratungsweiseBeratung" type="radio" value="Online">
+            <label for="perOnlineBeratung">Online</label>
+           
           </div>
           <div class="radiocont">
-            <label for="persoenlichBeratung">vor Ort*</label>
             <input id="persoenlichBeratung" name="beratungsweiseBeratung" type="radio" value="vor Ort">
+            
+            <label for="persoenlichBeratung">vor Ort*</label>
             <p class="klein">*in Absprache möglich</p>
+            
           </div>
         </fieldset>
         <div class="divider"></div>
         <fieldset>
           <div class="inputcont">
             <label for="thema-beratung">Welches Thema beschreibt deine Anfrage am besten?</label>
-          <select id="thema-beratung" name="thema-beratung" >
+          <select id="thema-beratung" name="thema-beratung" required>
               <option value="" disabled selected>Bitte wähle ein Thema aus</option>
               <option value="Günstige Prämie">Günstige Prämie</option>
               <option value="bestes Preis-/Leistungsverhältnis">bestes Preis-/Leistungsverhältnis</option>
@@ -159,8 +163,8 @@
           </div>
         </fieldset>
         <div>
-          <button class="subbutton" type="submit">Terminanfrage senden*</button>
-          <p class="margintop10px">*durch das Klicken auf den Button akzeptierst du unsere Nutzungsbedingungen und unsere Datenschutzerklärung</p>
+          <button class="subbutton" type="submit">Terminanfrage senden**</button>
+          <p class="margintop10px">**durch das Klicken auf den Button akzeptierst du unsere Nutzungsbedingungen und unsere Datenschutzerklärung</p>
         </div>
         
       </form>
@@ -171,30 +175,30 @@
           <h2 class="margintopbot20px fontsize30px">Nur noch 1 Schritt zu deiner kostenlosen Offerte</h2>
             <div class="inputcont">
               <label for="nameOfferte">Name / Vornname</label>
-              <input id="nameOfferte" name="nameOfferte[]" type="text">
+              <input id="nameOfferte" name="nameOfferte[]" type="text" placeholder="z.B. Mustermann Max" required>
             </div>
             <div class="inputcont">
               <label for="gebDateOfferte">Geburtsdatum</label>
-              <input id="gebDateOfferte" name="gebDateOfferte[]" type="date">
+              <input id="gebDateOfferte" name="gebDateOfferte[]" type="date" required>
             </div>
             <div class="inputcont">
               <label for="ortPlzOfferte">Ort / PLZ</label>
-              <input id="ortPlzOfferte" name="ortPlzOfferte" type="text">
+              <input id="ortPlzOfferte" name="ortPlzOfferte" type="text" placeholder="z.B. 3654 Gunten" required>
             </div>
             <div class="inputcont">
               <label for="emailOfferte">Email</label>
-              <input id="emailOfferte" name="emailOfferte" type="email">
+              <input id="emailOfferte" name="emailOfferte" type="email" placeholder="z.B. max.mustermann@gmail.com" required>
             </div>
             <div class="inputcont">
               <label for="telOfferte">Telefonnummer</label>
-              <input id="telOfferte" name="telOfferte" type="tel">
+              <input id="telOfferte" name="telOfferte" type="tel" placeholder="z.B. 079 111 11 11" required>
             </div>
         </fieldset>
         <div class="divider"></div>
         <fieldset>
           <div class="inputcont">
             <label for="aktuelleKKOfferte">Bei welcher Krankenkasse bist du aktuell Versichert?</label>
-            <select id="aktuelleKKOfferte" name="aktuelleKKOfferte[]" >
+            <select id="aktuelleKKOfferte" name="aktuelleKKOfferte[]" required>
               <option value="" disabled selected>Bitte wähle eine Krankenkasse aus</option>
               <option value="Agrisano">Agrisano</option>
               <option value="AMB">AMB</option>
@@ -242,7 +246,7 @@
         <fieldset>
           <div class="inputcont">
             <label for="themaOfferte">Welches Thema beschreibt deine Anfrage am besten?</label>
-          <select id="themaOfferte" name="themaOfferte[]" >
+          <select id="themaOfferte" name="themaOfferte[]" required>
               <option value="" disabled selected>Bitte wähle ein Thema aus</option>
               <option value="Günstige Prämie">Günstige Prämie</option>
               <option value="bestes Preis-/Leistungsverhältnis">bestes Preis-/Leistungsverhältnis</option>
@@ -272,8 +276,8 @@
         <fieldset class="radiofieldset">
           <Legend>Arbeitest du mehr als 8 Stunden</Legend>
           <div class="radiocont">
-            <input id="8StdArbeitJa" name="8StdArbeit" type="radio" value="8 Stunden Arbeit Ja">
-            <label for="8StdArbeitJa">Ja</label>
+            <input id="8StdArbeitJa" name="8StdArbeit" type="radio" value="8 Stunden Arbeit Ja" required checked>
+            <label class="higlight" for="8StdArbeitJa">Ja</label>
           </div>
           <div class="radiocont">
             <input id="8StdArbeitnein" name="8StdArbeit" type="radio" value="8 Stunden Arbeit Nein">
@@ -293,39 +297,27 @@
           <table class="tabelwith90">
             <tr>
               <td>
-                <input id="300" name="gewFranchiseOfferte" type="radio" value="300">
-              </td>
-              <td>
-                <label for="300">300,-</label>
+                <input id="300" name="gewFranchiseOfferte" type="radio" value="300" required checked>
+                <label class="higlight" for="300">300,-</label>
               </td>
               <td>
                 <input id="1000" name="gewFranchiseOfferte" type="radio" value="1000">
-              </td>
-              <td>
                 <label for="1000">1000,-</label>
               </td>
               <td>
                 <input id="1500" name="gewFranchiseOfferte" type="radio" value="1500">
-              </td>
-              <td>
                 <label for="1500">1500,-</label>
               </td>
               <td>
                 <input id="2000" name="gewFranchiseOfferte" type="radio" value="2000">
-              </td>
-              <td>
                 <label for="2000">2000,-</label>
               </td>
               <td>
                 <input id="2500" name="gewFranchiseOfferte" type="radio" value="2500">
-              </td>
-              <td>
                 <label for="2500">2500,-</label>
               </td>
               <td>
                 <input id="0" name="gewFranchiseOfferte" type="radio" value="0">
-              </td>
-              <td>
                 <label for="0">0,-</label>
                 <p>Kinder</p>
               </td>
@@ -338,10 +330,10 @@
           <table class="tabelwith90">
             <tr>
               <td>
-                <input id="telmed" name="gewModellOfferte" type="radio" value="Telmed">
+                <input id="telmed" name="gewModellOfferte" type="radio" value="Telmed" required checked>
               </td>
               <td>
-                <label for="telmed">Telmed</label>
+                <label class="higlight" for="telmed">Telmed</label>
               </td>
               <td>
                 <input id="hausarzt" name="gewModellOfferte" type="radio" value="Hausarzt">
@@ -559,10 +551,10 @@
           <table class="tabelwith90">
             <tr>
               <td>
-                <input type="radio" name="mirWichtigOfferte" id="basisleistungOfferte" value="Basisleistung zum günstigsten Preis">
+                <input type="radio" name="mirWichtigOfferte" id="basisleistungOfferte" value="Basisleistung zum günstigsten Preis" required checked>
               </td>
               <td>
-                <label for="basisleistungOfferte">Basisleistung zum günstigsten Preis</label>
+                <label class="higlight" for="basisleistungOfferte">Basisleistung zum günstigsten Preis</label>
               </td>
               <td>
                 <input type="radio" name="mirWichtigOfferte" id="bestePreisLeistungOfferte" value="Bestes Preis-/Leistungsverhältnis">

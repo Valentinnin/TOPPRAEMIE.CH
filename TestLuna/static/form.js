@@ -146,7 +146,7 @@ function addPersonForm() {
 }
 
 
-
+/*
 // Registriere das Event für das Formular
 document.getElementById('offerteForm').addEventListener('submit', validateForm);
 
@@ -164,3 +164,36 @@ function validateForm(event) {
 
     console.log("Alle Formularfelder wurden in der Konsole angezeigt.");
 } 
+*/
+// Label hilight wenn checked
+document.addEventListener('DOMContentLoaded', function() {
+    const inputs = document.querySelectorAll('input[type="checkbox"], input[type="radio"]');
+
+    inputs.forEach(input => {
+        input.addEventListener('change', function() {
+            if (input.type === "radio" && input.checked) {
+                // Alle Radio-Buttons mit demselben Namen durchgehen
+                const allRadios = document.querySelectorAll(`input[name="${input.name}"]`);
+                allRadios.forEach(radio => {
+                    const label = document.querySelector(`label[for="${radio.id}"]`);
+                    if (radio === input) {
+                    console.log("Hinzugefügt Highlight zu:", input.id);
+                        label.classList.add('higlight');
+                    } else {
+                    console.log("Entfernt Highlight von:", input.id);
+                    label.classList.remove('higlight');
+                    }
+                });
+            } else {
+                const label = document.querySelector(`label[for="${input.id}"]`);
+                if (input.checked) {
+                    label.classList.add('higlight');
+                    console.log("Hinzugefügt Highlight zu:", input.id);
+                } else {
+                    label.classList.remove('higlight');
+                    console.log("Entfernt Highlight von:", input.id);
+                }
+            }
+        });
+    });
+});

@@ -15,15 +15,15 @@
     
     <nav>
         <ul>
-          <li><a href="{{ url_for('krankenkasse') }}">Krankenkasse</a></li>
-          <li><a href="{{ url_for('haushaltsvers') }}">Haushaltsversicherung</a></li>
-          <li><a href="{{ url_for('wertsachvers') }}">Wertsachenversicherung</a></li>
-          <li><a href="{{ url_for('rechtsvers') }}">Rechtsschutz</a></li>
-          <li><a href="{{ url_for('autovers') }}">Autoversicherung</a></li>
-          <li><a href="{{ url_for('reisevers') }}">Reiseversicherung</a></li>
-          <li><a href="{{ url_for('tiervers') }}">Tierversicherung</a></li>
-          <li><a href="{{ url_for('vorsorgevers') }}">Vorsorge 3a/3b</a></li>
-          <li><a href="{{ url_for('steuererklärung') }}">Steuererklärung</a></li>
+          <li><a class="seclink" href="{{ url_for('krankenkasse') }}">Krankenkasse</a></li>
+          <li><a class="seclink" href="{{ url_for('haushaltsvers') }}">Haushaltsversicherung</a></li>
+          <li><a class="seclink" href="{{ url_for('wertsachvers') }}">Wertsachenversicherung</a></li>
+          <li><a id="mainlink" href="{{ url_for('rechtsvers') }}">Rechtsschutz</a></li>
+          <li><a class="seclink" href="{{ url_for('autovers') }}">Autoversicherung</a></li>
+          <li><a class="seclink" href="{{ url_for('reisevers') }}">Reiseversicherung</a></li>
+          <li><a class="seclink" href="{{ url_for('tiervers') }}">Tierversicherung</a></li>
+          <li><a class="seclink" href="{{ url_for('vorsorgevers') }}">Vorsorge 3a/3b</a></li>
+          <li><a class="seclink" href="{{ url_for('steuererklärung') }}">Steuererklärung</a></li>
         </ul>
     </nav>
   </header>
@@ -45,27 +45,27 @@
             <div class="inputcont">
               <!--abkürzung RSS für RechtsSchutzSingel-->
               <label for="nameRSS">Name / Vornname</label>
-              <input id="nameRSS" name="nameRSS" type="text">
+              <input id="nameRSS" name="nameRSS" type="text" placeholder="z.B. Mustermann Max" required>
             </div>
             <div class="inputcont">
               <label for="gebDateRSS">Geburtsdatum</label>
-              <input id="gebDateRSS" name="gebDateRSS" type="date">
+              <input id="gebDateRSS" name="gebDateRSS" type="date" required>
             </div>
             <div class="inputcont">
               <label for="strasseHausNrRSS">Strassse / Hausnummer</label>
-              <input id="strasseHausNrRSS" name="strasseHausNrRSS" type="text">
+              <input id="strasseHausNrRSS" name="strasseHausNrRSS" type="text" placeholder="z.B. Gartenstrasse 5" required>
             </div>
             <div class="inputcont">
               <label for="ortPlzRSS">Ort / PLZ</label>
-              <input id="ortPlzRSS" name="ortPlzRSS" type="text">
+              <input id="ortPlzRSS" name="ortPlzRSS" type="text" placeholder="z.B. 3654 Gunten" required>
             </div>
             <div class="inputcont">
               <label for="emailRSS">Email</label>
-              <input id="emailRSS" name="emailRSS" type="email">
+              <input id="emailRSS" name="emailRSS" type="email" placeholder="z.B. max.mustermann@gmail.com" required>
             </div>
             <div class="inputcont">
               <label for="telRSS">Telefonnummer</label>
-              <input id="telRSS" name="telRSS" type="tel">
+              <input id="telRSS" name="telRSS" type="tel" placeholder="z.B. 079 111 11 11" required>
             </div>
         </fieldset>
         <div class="divider"></div>
@@ -132,7 +132,7 @@
             <div class="inputcont">
               <!--abkürzung RSM für RechtsSchutzMulti-->
               <label for="nameRSM">Name / Vornname</label>
-              <input id="nameRSM" name="nameRSM" type="text">
+              <input id="nameRSM" name="nameRSM" type="text" placeholder="z.B. Mustermann Max">
             </div>
             <div class="inputcont">
               <label for="gebDateRSM">Geburtsdatum</label>
@@ -140,19 +140,19 @@
             </div>
             <div class="inputcont">
               <label for="strasseHausNrRSM">Strassse / Hausnummer</label>
-              <input id="strasseHausNrRSM" name="strasseHausNrRSM" type="text">
+              <input id="strasseHausNrRSM" name="strasseHausNrRSM" type="text" placeholder="z.B. Gartenstrasse 5">
             </div>
             <div class="inputcont">
               <label for="ortPlzRSM">Ort / PLZ</label>
-              <input id="ortPlzRSM" name="ortPlzRSM" type="text">
+              <input id="ortPlzRSM" name="ortPlzRSM" type="text" placeholder="z.B. 3654 Gunten">
             </div>
             <div class="inputcont">
               <label for="emailRSM">Email</label>
-              <input id="emailRSM" name="emailRSM" type="email">
+              <input id="emailRSM" name="emailRSM" type="email" placeholder="z.B. max.mustermann@gmail.com">
             </div>
             <div class="inputcont">
               <label for="telRSM">Telefonnummer</label>
-              <input id="telRSM" name="telRSM" type="tel">
+              <input id="telRSM" name="telRSM" type="tel" placeholder="z.B. 079 111 11 11">
             </div>
         </fieldset>
         <div class="divider"></div>
@@ -193,7 +193,7 @@
           <div class="radiocont">
             <!--abkürzung RSKS RechtsStreitigKeitSingel-->
             <input id="aktuelleRSKMNein" name="aktuelleRSKM" type="radio" value="Nein">
-            <label for="aktuelleRSKMNein">Nein</label>
+            <label class="higlight" for="aktuelleRSKMNein">Nein</label>
           </div>
           <div class="radiocont">
             <input id="aktuelleRSKMJa" name="aktuelleRSKM" type="radio" value="Ja">

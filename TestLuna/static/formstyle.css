@@ -9,7 +9,7 @@ body {
   padding: 0;
   height: 100%;
   overflow: auto;
-  font-family: Arial, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 body::before {
@@ -70,7 +70,7 @@ header {
 }
 
 .seclink{
-  transition:0.5s;
+  transition:0.3s;
   
 }
 
@@ -207,7 +207,7 @@ button{
 }
 button:hover{
   cursor: pointer;
-  background-color: #36a93b;
+  background-color: #41c848;
 }
 .buttoncont{
   margin-top: 50px;
@@ -378,4 +378,12 @@ textarea{
   padding-top: 10px;
   padding-bottom: 10px;
   margin-bottom: 10px;
+}
+
+.higlight {
+  text-decoration: underline;           /* Fügt die Unterstreichung hinzu */
+    text-decoration-color: #057115;       /* Ändert die Farbe der Unterstreichung */
+    text-decoration-thickness: 3px;       /* Ändert die Dicke der Unterstreichung */
+    background-color: rgba(104, 201, 104, 0.322);
+  border-radius: 5px;
 }
