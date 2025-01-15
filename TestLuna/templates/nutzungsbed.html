@@ -4,26 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../static/formstyle.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='formstyle.css') }}">
 </head>
 <body  class="container">
   <header>
     <div class="logocont">
-      <a href="PageBauen.html"><img id="logo" src="../static/Bilder/logo2.png" alt="Toppraemie Logo"></a>
+      <a href="{{ url_for('index') }}"><img id="logo" src="{{ url_for('static', filename='Bilder/logo2.png') }}" alt="Toppraemie Logo"></a>
       <h2 id="anim-text">Jetzt kostenlos vergleichen und bares Geld sparen</h2>
   </div>
     
     <nav>
         <ul>
-          <li><a class="seclink" href="PageBauen.html">Krankenkasse</a></li>
-          <li><a class="seclink"  href="{{ url_for('haushaltsvers') }}">Haushaltsversicherung</a></li>
-          <li><a class="seclink"  href="{{ url_for('wertsachvers') }}">Wertsachenversicherung</a></li>
+          <li><a class="seclink" href="{{ url_for('krankenkasse') }}">Krankenkasse</a></li>
+          <li><a class="seclink" href="{{ url_for('haushaltsvers') }}">Haushaltsversicherung</a></li>
+          <li><a class="seclink" href="{{ url_for('wertsachvers') }}">Wertsachenversicherung</a></li>
           <li><a class="seclink" href="{{ url_for('rechtsvers') }}">Rechtsschutz</a></li>
-          <li><a class="seclink"  href="{{ url_for('autovers') }}">Autoversicherung</a></li>
-          <li><a class="seclink"  href="{{ url_for('reisevers') }}">Reiseversicherung</a></li>
-          <li><a class="seclink"  href="{{ url_for('tiervers') }}">Tierversicherung</a></li>
-          <li><a class="seclink"  href="{{ url_for('vorsorgevers') }}">Vorsorge 3a/3b</a></li>
-          <li><a class="seclink"  href="{{ url_for('steuererklärung') }}">Steuererklärung</a></li>
+          <li><a class="seclink" href="{{ url_for('autovers') }}">Autoversicherung</a></li>
+          <li><a class="seclink" href="{{ url_for('reisevers') }}">Reiseversicherung</a></li>
+          <li><a class="seclink" href="{{ url_for('tiervers') }}">Tierversicherung</a></li>
+          <li><a class="seclink" href="{{ url_for('vorsorgevers') }}">Vorsorge 3a/3b</a></li>
+          <li><a class="seclink" href="{{ url_for('steuererklärung') }}">Steuererklärung</a></li>
         </ul>
     </nav>
   </header>
@@ -76,11 +76,10 @@
     </div>
   </main>
   <footer>
-    <a class="seclink" href="/Impressum.html" target="_self">Impressum</a>
-    <a id="mainlink" href="/Nutzungsbedingungen.html" target="_self">Nutzungsbedingungen</a>
-    <a class="seclink" href="/Datenschutz.html" target="_self">Datenschutzerklärung</a>
+    <a class="seclink linkspecial" href="{{ url_for('impres') }}">Impressum</a>
+    <a id="mainlink" class="linkspecial" href="{{ url_for('nutzungsbed') }}" >Nutzungsbedingungen</a>
+    <a class="seclink linkspecial" href="{{ url_for('datenschutz') }}">Datenschutzerklärung</a>
   </footer>
-  <script src="../static/form.js"></script>
-  
+  <script src="{{ url_for('static', filename='form.js') }}"></script>
 </body>
 </html>

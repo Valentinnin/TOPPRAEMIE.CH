@@ -23,22 +23,30 @@
           <li><a class="seclink" href="{{ url_for('reisevers') }}">Reiseversicherung</a></li>
           <li><a class="seclink" href="{{ url_for('tiervers') }}">Tierversicherung</a></li>
           <li><a class="seclink" href="{{ url_for('vorsorgevers') }}">Vorsorge 3a/3b</a></li>
-          <li><a id="mainlink" href="{{ url_for('steuererklärung') }}">Steuererklärung</a></li>
+          <li><a class="seclink" href="{{ url_for('steuererklärung') }}">Steuererklärung</a></li>
         </ul>
     </nav>
   </header>
   <main>
     <div class="maincont">
-      <div class="seccont">
-        <h2 class="marginbot20px bigger">Hier ensteht ein neuer Bereich...</h2>
-        <p class="biggerr">Anfragen zum Thema <span class="textdecounderline">Steuererklärung</span> bitte direkt per Email an <br> <a href="mailto:anfrage@toppraemie.ch"> <span class="hervorheben">anfrage@toppraemie.ch</span></a></p>
+      <div class="seccont txtalignleft">
+        <h3>Impressum</h3>
+        <p class="fontsizep">
+          Verantwortlich für den Inhalt der Website: <br>
+          [Name des Unternehmens/Betreibers] <br>
+          [Adresse] <br>
+          E-Mail: anfrage@toppraemie.ch <br> </p>
+          <h3 class="margintop1rem">Rechtlicher Hinweis:</h3>
+          <p  class="fontsizep">
+          Diese Website dient ausschließlich der Information. Trotz sorgfältiger Kontrolle übernehmen wir keine Haftung für die Inhalte externer Links. <br> Für den Inhalt der verlinkten Seiten sind ausschließlich deren Betreiber verantwortlich.</p>
       </div>
     </div>
   </main>
   <footer>
-    <a class="seclink linkspecial" href="{{ url_for('impres') }}">Impressum</a>
+    <a id="mainlink" class="linkspecial" href="{{ url_for('impres') }}">Impressum</a>
     <a class="seclink linkspecial" href="{{ url_for('nutzungsbed') }}" >Nutzungsbedingungen</a>
     <a class="seclink linkspecial" href="{{ url_for('datenschutz') }}">Datenschutzerklärung</a>
   </footer>
+  <script src="{{ url_for('static', filename='form.js') }}"></script>
 </body>
 </html>

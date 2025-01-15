@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='formstyle.css') }}">
+</head>
+<body  class="container">
+  <header>
+    <div class="logocont">
+      <a href="{{ url_for('index') }}"><img id="logo" src="{{ url_for('static', filename='Bilder/logo2.png') }}" alt="Toppraemie Logo"></a>
+      <h2 id="anim-text">Jetzt kostenlos vergleichen und bares Geld sparen</h2>
+  </div>
+    
+    <nav>
+        <ul>
+          <li><a class="seclink" href="{{ url_for('krankenkasse') }}">Krankenkasse</a></li>
+          <li><a class="seclink" href="{{ url_for('haushaltsvers') }}">Haushaltsversicherung</a></li>
+          <li><a class="seclink" href="{{ url_for('wertsachvers') }}">Wertsachenversicherung</a></li>
+          <li><a class="seclink" href="{{ url_for('rechtsvers') }}">Rechtsschutz</a></li>
+          <li><a class="seclink" href="{{ url_for('autovers') }}">Autoversicherung</a></li>
+          <li><a class="seclink" href="{{ url_for('reisevers') }}">Reiseversicherung</a></li>
+          <li><a class="seclink" href="{{ url_for('tiervers') }}">Tierversicherung</a></li>
+          <li><a class="seclink" href="{{ url_for('vorsorgevers') }}">Vorsorge 3a/3b</a></li>
+          <li><a class="seclink" href="{{ url_for('steuererklärung') }}">Steuererklärung</a></li>
+        </ul>
+    </nav>
+  </header>
+  <main>
+    <div class="maincont">
+      <div class="seccont txtalignleft">
+        <h3>Datenschutzerklärung</h3> 
+<p>
+Stand: 15.01.2025 <br>
+<br>
+
+<span class="spanspecial">1. Einführung</span>  <br>
+
+Diese Datenschutzerklärung informiert Sie über die Bearbeitung Ihrer Personendaten durch unsere Website und Dienstleistungen. «Personendaten» sind alle Angaben, die sich auf eine identifizierte oder identifizierbare Person beziehen. <br>
+
+Wir beachten die gesetzlichen Vorgaben des Schweizer Datenschutzrechts (DSG) und – soweit anwendbar – der Europäischen Datenschutz-Grundverordnung (DSGVO). <br><br>
+
+<span class="spanspecial">2. Verantwortlicher</span>  <br>
+
+Verantwortlich für die Datenbearbeitung ist: <br>
+[Name Ihres Unternehmens] <br>
+[Adresse Ihres Unternehmens, falls bekannt] <br>
+E-Mail: info@beispiel-website.ch <br><br>
+
+<span class="spanspecial">3. Welche Daten werden bearbeitet?</span> <br>
+
+Kontakt- und Stammdaten: Name, E-Mail-Adresse, Telefonnummer. <br>
+Vertragsdaten: Informationen zu den von Ihnen angefragten oder gebuchten Dienstleistungen. <br>
+Technische Daten: IP-Adresse, Browserinformationen, Zugriffszeiten, und ähnliche Daten, die durch den Besuch der Website anfallen. <br>
+Kommunikationsdaten: Inhalte Ihrer Nachrichten oder Anfragen über Kontaktformulare oder E-Mails. <br><br>
+
+<span class="spanspecial">4. Zweck der Datenbearbeitung</span> <br>
+
+Wir bearbeiten Ihre Daten für folgende Zwecke: <br>
+
+Bearbeitung Ihrer Anfragen und Kontaktaufnahme <br>
+Erfüllung von Verträgen <br>
+Optimierung unserer Website <br>
+Marketingaktivitäten (z. B. Newsletter, sofern Sie zugestimmt haben) <br><br>
+<span class="spanspecial">5. Weitergabe von Daten</span> <br>
+
+Ihre Daten werden nicht an Dritte weitergegeben, es sei denn: <br>
+
+Sie haben eingewilligt. <br>
+Die Weitergabe ist zur Vertragserfüllung notwendig (z. B. an Kooperationspartner). <br>
+Es besteht eine gesetzliche Verpflichtung.<br><br>
+<span class="spanspecial">6. Cookies und Analyse-Tools</span> <br>
+
+Wir verwenden Cookies, um unsere Website zu verbessern und nutzerfreundlicher zu gestalten. Sie können Cookies in Ihren Browsereinstellungen deaktivieren.<br>
+
+Zur Analyse der Website verwenden wir möglicherweise Tools wie Google Analytics. Diese können Daten wie IP-Adresse und Nutzungsverhalten anonymisiert erfassen.<br><br>
+
+<span class="spanspecial">7. Rechte der betroffenen Personen</span><br>
+
+Sie haben das Recht:<br>
+<ul class="ulspecial">
+  <li>Auskunft über Ihre Daten zu erhalten</li>
+  <li>Unrichtige Daten korrigieren zu lassen</li>
+  <li>Die Löschung Ihrer Daten zu verlangen (soweit gesetzlich zulässig)</li>
+  <li>Einer Datenverarbeitung zu widersprechen</li>
+</ul>
+
+Bitte richten Sie Ihre Anfrage an info@beispiel-website.ch.<br>
+</p>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <a class="seclink linkspecial" href="{{ url_for('impres') }}">Impressum</a>
+    <a class="seclink linkspecial" href="{{ url_for('nutzungsbed') }}" >Nutzungsbedingungen</a>
+    <a id="mainlink" class="linkspecial" href="{{ url_for('datenschutz') }}">Datenschutzerklärung</a>
+  </footer>
+  <script src="{{ url_for('static', filename='form.js') }}"></script>
+</body>
+</html>

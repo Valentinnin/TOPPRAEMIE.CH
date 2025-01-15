@@ -51,6 +51,15 @@ def vorsorgevers():
 @app.route('/steuererklaerung')
 def steuererklärung():
     return render_template('steuererklärung.html')
+@app.route('/impres')
+def impres():
+    return render_template('impres.html')
+@app.route('/datenschutz')
+def datenschutz():
+    return render_template('datenschutz.html')
+@app.route('/nutzungsbed')
+def nutzungsbed():
+    return render_template('nutzungsbed.html')
 
 # Route für das Versenden der E-Mail KK Beratung
 @app.route('/send_email', methods=['POST'])

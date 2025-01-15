@@ -387,3 +387,36 @@ textarea{
     background-color: rgba(104, 201, 104, 0.322);
   border-radius: 5px;
 }
+
+.txtalignleft{
+  text-align: left;
+}
+
+h3{
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.margintop1rem{
+  margin-top: 1rem;
+}
+
+.fontsizep{
+  font-size: 1.1rem;
+}
+
+.spanspecial{
+  font-weight: 600;
+  
+}
+
+.ulspecial{
+  margin-left: 20px;
+}
+
+.linkspecial{
+  color: black;
+}
+.linkspecial:visited{
+  color: black;
+}

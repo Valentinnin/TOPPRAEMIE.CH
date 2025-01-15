@@ -295,3 +295,10 @@ a:link {
 a:visited {
   color: white; 
 }
+
+.linkspecial{
+  color: black;
+}
+.linkspecial:visited{
+  color: black;
+}
